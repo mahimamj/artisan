@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="magentaMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0007b" />
+      <stop offset="100%" stop-color="#9d0052" />
+    </linearGradient>
+    <linearGradient id="magentaLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff1a8c" />
+      <stop offset="100%" stop-color="#c40066" />
+    </linearGradient>
+    <linearGradient id="magentaDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#800043" />
+      <stop offset="100%" stop-color="#54002c" />
+    </linearGradient>
+    <linearGradient id="cyanSwoosh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#0088cc" />
+    </linearGradient>
+    <linearGradient id="yellowBrush" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe600" />
+      <stop offset="50%" stop-color="#ffcc00" />
+      <stop offset="100%" stop-color="#e6b800" />
+    </linearGradient>
+    <linearGradient id="metalText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a3f47" />
+      <stop offset="50%" stop-color="#1f2329" />
+      <stop offset="100%" stop-color="#111317" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10, 10)">
+    <path d="M 135 30 L 70 120 L 50 145 L 35 155 L 75 125 L 125 45 Z" fill="url(#magentaDark)" />
+    <path d="M 135 30 L 35 155 L 60 145 L 115 65 L 138 35 Z" fill="url(#magentaMain)" />
+    <path d="M 135 30 L 195 150 L 175 150 L 128 50 Z" fill="url(#magentaLight)" />
+    <path d="M 85 105 L 155 105 L 175 150 L 160 150 L 140 115 L 75 125 Z" fill="url(#magentaMain)" />
+
+    <path d="M 125 128 C 132 110 135 90 132 75 C 130 65 125 60 122 58 C 120 56 123 68 128 80 C 132 95 130 115 122 135 Z" fill="url(#cyanSwoosh)" />
+    
+    <path d="M 230 40 
+             C 235 38 238 45 236 55 
+             L 235 75 
+             C 242 74 255 70 270 72 
+             C 265 77 248 79 235 80 
+             L 234 110 
+             C 233 130 242 140 262 138 
+             C 272 137 278 130 282 122
+             C 285 128 276 148 255 150 
+             C 230 152 216 138 218 108 
+             L 220 80 
+             C 200 83 185 86 175 88 
+             C 182 82 202 78 220 76 
+             L 222 50 
+             C 223 42 227 38 230 40 Z" fill="url(#yellowBrush)" />
+    
+    <path d="M 226 32 C 229 28 233 26 235 30 L 232 42 Z" fill="#ffe600" />
+    <path d="M 233 34 L 237 46 L 230 44 Z" fill="#ffcc00" />
+    <path d="M 258 142 C 265 140 273 133 277 125 C 275 132 267 144 258 147 Z" fill="#e6b800" />
+
+    <circle cx="304" cy="50" r="10" fill="url(#metalText)" />
+
+    <rect x="296" y="70" width="16" height="75" rx="3" fill="url(#metalText)" />
+
+    <path d="M 370 82 
+             C 365 73 350 68 337 73 
+             C 322 78 320 92 328 100 
+             C 336 108 362 110 366 122 
+             C 370 134 356 147 337 146 
+             C 322 145 313 135 310 125 
+             L 324 120 
+             C 326 127 332 133 340 133 
+             C 349 133 354 126 352 120 
+             C 349 112 328 110 320 98 
+             C 313 86 323 70 340 68 
+             C 356 66 370 74 374 84 Z" fill="url(#metalText)" />
+
+    <path d="M 432 70 L 432 145 L 417 145 L 417 132 C 410 142 396 148 383 145 C 367 142 358 128 360 110 C 362 93 376 80 395 78 C 405 77 414 80 418 84 L 418 82 C 418 74 410 70 400 71 C 390 72 382 78 378 84 L 368 74 C 375 65 388 58 403 58 C 423 58 432 70 432 82 Z M 417 105 C 417 95 408 90 398 91 C 387 92 379 100 378 111 C 377 121 384 130 395 130 C 407 130 417 120 417 105 Z" fill="url(#metalText)" />
+
+    <path d="M 448 70 L 463 70 L 463 83 C 470 73 483 67 496 70 C 510 73 517 85 517 102 L 517 145 L 501 145 L 501 104 C 501 93 496 84 485 84 C 473 84 464 94 464 107 L 464 145 L 448 145 Z" fill="url(#metalText)" />
+  </g>
+
+  <g transform="translate(10, 168)">
+    <polygon points="15,12 155,10 155,14" fill="url(#metalText)" opacity="0.6" />
+    <text x="300" y="16" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4" fill="url(#metalText)" text-anchor="middle">
+      VENTURES PRIVATE LIMITED
+    </text>
+    <polygon points="585,12 445,10 445,14" fill="url(#metalText)" opacity="0.6" />
+  </g>
+</svg>
