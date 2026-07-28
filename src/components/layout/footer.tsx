@@ -16,10 +16,19 @@ export function Footer() {
                 className="h-10 md:h-12 w-auto object-contain"
               />
             </div>
-            <p className="text-white/50 text-[15px] leading-relaxed max-w-sm mb-8">
-              Premium label manufacturing and industrial printing solutions engineered
-              for global enterprise clients.
+            <p className="text-white/50 text-[15px] leading-relaxed max-w-sm mb-4">
+              Premium label manufacturing & industrial printing solutions engineered for global enterprise clients.
             </p>
+            <div className="text-xs text-white/60 space-y-2 mb-8 border-l-2 border-magenta/40 pl-3">
+              <div>
+                <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Factory Address:</strong>
+                <span>Plot no 828, Santej, Opp. Neelkanth Hotel, Rakanpur, Taluka Kalol, Gujarat - 382721</span>
+              </div>
+              <div>
+                <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Registered Office:</strong>
+                <span>44, Panchshil Bunglow, Opp Metro Pillar - 288, Usmanpura, Ahmedabad - 380013</span>
+              </div>
+            </div>
             <div className="flex gap-4">
               {["LinkedIn", "Twitter", "Instagram"].map((social) => (
                 <a

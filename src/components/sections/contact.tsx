@@ -39,33 +39,38 @@ export function Contact() {
                   {
                     icon: MapPin,
                     label: "Factory Address",
-                    value: "Plot No. 42, Industrial Area Phase-II,\nChandigarh, India 160002",
+                    value: "Plot no 828, Santej, Opposite Neelkanth Hotel,\nbehind Bhavi Tubes, Rakanpur, Taluka Kalol,\nGujarat - 382721",
+                  },
+                  {
+                    icon: MapPin,
+                    label: "Registered / Office Address",
+                    value: "44, Panchshil Bunglow, Opp Metro Pillar - 288,\nNear Naranpura Railway Crossing, Usmanpura,\nAhmedabad, Gujarat - 380013",
                   },
                   {
                     icon: Mail,
                     label: "Email",
-                    value: "info@artisanventures.com",
+                    value: "info@artisanventures.in",
                   },
                   {
                     icon: Phone,
                     label: "Phone",
-                    value: "+91 172 456 7890",
+                    value: "+91 98250 00000",
                   },
                   {
                     icon: Clock,
                     label: "Business Hours",
-                    value: "Mon – Sat: 9:00 AM – 6:00 PM IST",
+                    value: "Mon – Sat: 9:00 AM – 6:30 PM IST",
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-white/5 border border-white/10">
-                      <item.icon size={18} strokeWidth={1.5} className="text-cyan" />
+                      <item.icon size={18} strokeWidth={1.5} className="text-magenta" />
                     </div>
                     <div>
                       <div className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
                         {item.label}
                       </div>
-                      <div className="mt-1 text-[15px] text-white/70 whitespace-pre-line">
+                      <div className="mt-1 text-[15px] text-white/80 whitespace-pre-line leading-relaxed">
                         {item.value}
                       </div>
                     </div>
@@ -76,8 +81,8 @@ export function Contact() {
               <div className="mt-10 rounded-[14px] overflow-hidden border border-white/10 aspect-[16/9] bg-white/5 relative">
                 <iframe
                   title="Artisan Ventures location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=76.75%2C30.70%2C76.85%2C30.78&layer=mapnik&marker=30.74%2C76.80"
-                  className="w-full h-full border-0 grayscale opacity-70"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=72.45%2C23.00%2C72.65%2C23.18&layer=mapnik&marker=23.10%2C72.51"
+                  className="w-full h-full border-0 filter opacity-80"
                   loading="lazy"
                 />
               </div>

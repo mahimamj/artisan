@@ -256,3 +256,15 @@ export const FOOTER_LINKS = {
   industries: ["FMCG", "Healthcare", "Pharmaceuticals", "Automotive", "E-commerce"],
   company: ["About Us", "Careers", "Certifications", "Contact"],
 } as const;
+
+export const COMPANY_ADDRESSES = {
+  factory: {
+    title: "Factory Address",
+    address: "Plot no 828, Santej, Opposite Neelkanth Hotel, behind Bhavi Tubes, Rakanpur, Taluka Kalol, Gujarat - 382721"
+  },
+  office: {
+    title: "Registered / Office Address",
+    address: "44, Panchshil Bunglow, Opp Metro Pillar - 288, Near Naranpura Railway Crossing, Usmanpura, Ahmedabad, Gujarat - 380013"
+  }
+} as const;
+
