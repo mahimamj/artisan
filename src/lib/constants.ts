@@ -1,79 +1,69 @@
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Labels", href: "#labels" },
-  { label: "Printer Solutions", href: "#printers" },
-  { label: "Industries", href: "#industries" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Labels", href: "/labels" },
+  { label: "Printer Solutions", href: "/printer-rental" },
+  { label: "Industries", href: "/labels#industries" },
+  { label: "About", href: "/labels#about" },
+  { label: "Contact", href: "/labels#contact" },
 ] as const;
 
 export const LABEL_CATEGORIES = [
   {
-    title: "Barcode Labels",
-    description: "High-resolution barcode labels for inventory and retail systems.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    title: "Pharma Labels",
+    description: "Precision-engineered tamper-evident and compliance labels for pharmaceutical packaging.",
+    image: "/categories/pharma/Gemini_Generated_Image_9owg3w9owg3w9owg.png",
   },
   {
-    title: "Thermal Labels",
-    description: "Direct and transfer thermal labels for logistics and warehousing.",
-    image:
-      "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=800&q=80",
+    title: "Perfume Labels",
+    description: "Elegant, high-finish tactile labels designed for luxury perfume and fragrance bottles.",
+    image: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_16_PM.png",
   },
   {
-    title: "Food Labels",
-    description: "Food-safe labels compliant with international packaging standards.",
-    image:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80",
-  },
-  {
-    title: "Pharmaceutical Labels",
-    description: "Precision labels for regulated pharmaceutical packaging.",
-    image:
-      "https://images.unsplash.com/photo-1587854692152-cf660b6830b3?w=800&q=80",
+    title: "FMCG Packaging Labels",
+    description: "High-volume vibrant product labels built for consumer goods and retail packaging.",
+    image: "/categories/fmcg/Gemini_Generated_Image_hisj06hisj06hisj.png",
   },
   {
     title: "Cosmetic Labels",
-    description: "Premium finishes for luxury cosmetic and beauty brands.",
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80",
+    description: "Premium foil-stamped, water-resistant labels tailored for cosmetics and beauty products.",
+    image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
   },
   {
-    title: "Industrial Labels",
-    description: "Durable labels engineered for harsh industrial environments.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    title: "Pharmaceutical Compliance",
+    description: "Regulated medical dosage and security labels meeting international FDA/EU standards.",
+    image: "/categories/pharma/03.png",
   },
   {
-    title: "Security Labels",
-    description: "Tamper-evident and anti-counterfeit security labeling solutions.",
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+    title: "Luxury Fragrance Box Labels",
+    description: "Embossed metallic foil labeling solutions for premium fragrance gift sets and boxes.",
+    image: "/categories/perfume/Gemini_Generated_Image_wsoo7ywsoo7ywsoo.png",
   },
   {
-    title: "Packaging Labels",
-    description: "Brand-forward packaging labels for premium product presentation.",
-    image:
-      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80",
+    title: "Food & Beverage Labels",
+    description: "Food-safe, moisture-durable custom labels engineered for high shelf appeal.",
+    image: "/categories/fmcg/Gemini_Generated_Image_uwnx7luwnx7luwnx.png",
   },
   {
-    title: "Custom Labels",
-    description: "Fully bespoke label solutions tailored to your specifications.",
-    image:
-      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80",
+    title: "Skincare & Beauty Labels",
+    description: "Sleek matte and glossy finishes resistant to oils, water, and daily handling.",
+    image: "/categories/cosmetic/Gemini_Generated_Image_fu5cscfu5cscfu5c.png",
+  },
+  {
+    title: "Industrial Barcode & Logistics",
+    description: "High-contrast thermal transfer and barcode labels for inventory tracking and shipping.",
+    image: "/categories/fmcg/Gemini_Generated_Image_8pacx8pacx8pacx8.png",
   },
 ] as const;
 
 export const INDUSTRIES = [
+  "Pharma",
+  "Perfume",
   "FMCG",
-  "Retail",
+  "Cosmetics",
   "Healthcare",
-  "Pharmaceuticals",
-  "Manufacturing",
+  "Retail",
   "Logistics",
-  "Automotive",
   "Food & Beverage",
-  "E-commerce",
 ] as const;
 
 export const MANUFACTURING_STEPS = [
@@ -88,28 +78,25 @@ export const MANUFACTURING_STEPS = [
 
 export const FEATURED_WORK = [
   {
-    title: "Global FMCG Brand Rollout",
+    title: "Pharmaceutical Compliance Rollout",
+    industry: "Pharma",
+    description:
+      "Engineered tamper-evident and serialised medicine labels meeting international regulatory standards for leading pharmaceutical brands.",
+    image: "/categories/pharma/Gemini_Generated_Image_44bd9z44bd9z44bd.png",
+  },
+  {
+    title: "Global FMCG Packaging Campaign",
     industry: "FMCG",
     description:
-      "Delivered 12 million custom product labels across 40 SKUs with zero defect tolerance for a leading consumer goods manufacturer.",
-    image:
-      "https://images.unsplash.com/photo-1604719312566-8912a086e968?w=1200&q=80",
+      "Delivered high-volume product labels across 50+ SKUs with zero defect tolerance for top consumer goods manufacturers.",
+    image: "/categories/fmcg/Gemini_Generated_Image_mv6u1zmv6u1zmv6u.png",
   },
   {
-    title: "Pharmaceutical Compliance Labels",
-    industry: "Pharmaceuticals",
+    title: "Luxury Perfume & Fragrance Line",
+    industry: "Perfume",
     description:
-      "Engineered tamper-evident labels meeting FDA and EU regulatory standards for a multinational pharma company.",
-    image:
-      "https://images.unsplash.com/photo-1576671087657-831a0865a5c0?w=1200&q=80",
-  },
-  {
-    title: "Luxury Cosmetic Packaging",
-    industry: "Cosmetics",
-    description:
-      "Premium foil-stamped and embossed labels for a high-end beauty brand's global product launch.",
-    image:
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&q=80",
+      "Custom foil-stamped, water-resistant tactile labels for high-end global perfume launches.",
+    image: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_22_PM.png",
   },
 ] as const;
 
@@ -203,44 +190,84 @@ export const CLIENT_LOGOS = [
 
 export const GALLERY_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
-    alt: "Factory floor",
-    category: "Factory",
+    src: "/categories/pharma/Gemini_Generated_Image_9owg3w9owg3w9owg.png",
+    alt: "Pharmaceutical Packaging Label",
+    category: "Pharma",
   },
   {
-    src: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80",
-    alt: "Label printing machinery",
-    category: "Machinery",
+    src: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_16_PM.png",
+    alt: "Luxury Perfume Label",
+    category: "Perfume",
   },
   {
-    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-    alt: "Production line",
-    category: "Production",
+    src: "/categories/fmcg/Gemini_Generated_Image_hisj06hisj06hisj.png",
+    alt: "FMCG Consumer Label",
+    category: "FMCG",
   },
   {
-    src: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80",
-    alt: "Label rolls",
-    category: "Label Rolls",
+    src: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
+    alt: "Cosmetic Bottle Label",
+    category: "Cosmetic",
   },
   {
-    src: "https://images.unsplash.com/photo-1604719312566-8912a086e968?w=800&q=80",
-    alt: "Packaging area",
-    category: "Packaging",
+    src: "/categories/pharma/Gemini_Generated_Image_uxwv12uxwv12uxwv.png",
+    alt: "Medication Container Labeling",
+    category: "Pharma",
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    alt: "Industrial printers",
-    category: "Industrial Printers",
+    src: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_06_PM.png",
+    alt: "Fragrance Bottle Packaging",
+    category: "Perfume",
   },
   {
-    src: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80",
-    alt: "Warehouse",
-    category: "Warehouse",
+    src: "/categories/fmcg/Gemini_Generated_Image_4go4934go4934go4.png",
+    alt: "Product Container Labeling",
+    category: "FMCG",
   },
   {
-    src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
-    alt: "Quality inspection",
-    category: "Production",
+    src: "/categories/cosmetic/Gemini_Generated_Image_6ryiwy6ryiwy6ryi.png",
+    alt: "Skincare Product Labeling",
+    category: "Cosmetic",
+  },
+  {
+    src: "/categories/pharma/Gemini_Generated_Image_44bd9z44bd9z44bd.png",
+    alt: "Pharma Compliance Roll",
+    category: "Pharma",
+  },
+  {
+    src: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_33_59_PM.png",
+    alt: "Fine Fragrance Labeling",
+    category: "Perfume",
+  },
+  {
+    src: "/categories/fmcg/Gemini_Generated_Image_owj0f1owj0f1owj0.png",
+    alt: "Consumer Goods Packaging",
+    category: "FMCG",
+  },
+  {
+    src: "/categories/cosmetic/Gemini_Generated_Image_eofln9eofln9eofl.png",
+    alt: "Luxury Cosmetics Label",
+    category: "Cosmetic",
+  },
+  {
+    src: "/categories/pharma/03.png",
+    alt: "Medical Dosage Label",
+    category: "Pharma",
+  },
+  {
+    src: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_11_PM.png",
+    alt: "Perfume Box Label",
+    category: "Perfume",
+  },
+  {
+    src: "/categories/fmcg/Gemini_Generated_Image_ihubc6ihubc6ihub.png",
+    alt: "Food & Beverage Labeling",
+    category: "FMCG",
+  },
+  {
+    src: "/categories/cosmetic/Gemini_Generated_Image_u69322u69322u693.png",
+    alt: "Beauty Product Packaging",
+    category: "Cosmetic",
   },
 ] as const;
 
@@ -252,8 +279,8 @@ export const CERTIFICATIONS = [
 ] as const;
 
 export const FOOTER_LINKS = {
-  products: ["Barcode Labels", "Thermal Labels", "Food Labels", "Custom Labels", "Industrial Printers"],
-  industries: ["FMCG", "Healthcare", "Pharmaceuticals", "Automotive", "E-commerce"],
+  products: ["Pharma Labels", "Perfume Labels", "FMCG Labels", "Cosmetic Labels", "Industrial Printers"],
+  industries: ["Pharma", "Perfume", "FMCG", "Cosmetics", "Healthcare"],
   company: ["About Us", "Careers", "Certifications", "Contact"],
 } as const;
 
@@ -267,4 +294,3 @@ export const COMPANY_ADDRESSES = {
     address: "44, Panchshil Bunglow, Opp Metro Pillar - 288, Near Naranpura Railway Crossing, Usmanpura, Ahmedabad, Gujarat - 380013"
   }
 } as const;
-

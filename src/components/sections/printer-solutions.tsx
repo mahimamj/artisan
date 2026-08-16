@@ -80,7 +80,7 @@ export function PrinterSolutions() {
           <FadeIn delay={0.3} direction="left">
             <div className="relative aspect-[4/5] rounded-[16px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                src="/categories/fmcg/Gemini_Generated_Image_4go4934go4934go4.png"
                 alt="Industrial printing systems"
                 fill
                 className="object-cover"

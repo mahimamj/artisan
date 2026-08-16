@@ -39,11 +39,11 @@ export function Navbar() {
           className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8"
           aria-label="Main navigation"
         >
-          <Link href="#home" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <img 
-              src={scrolled ? "/artisan-logo-transparent.png" : "/artisan-logo-white.png"} 
+              src="/artisan-logo-transparent.png" 
               alt="Artisan Ventures Private Limited" 
-              className="h-10 md:h-12 w-auto object-contain transition-all duration-300 drop-shadow-md"
+              className="h-10 md:h-12 w-auto object-contain transition-all duration-300 drop-shadow-sm"
             />
           </Link>
 
