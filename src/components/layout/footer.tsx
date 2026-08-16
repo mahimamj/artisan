@@ -21,6 +21,10 @@ export function Footer() {
             </p>
             <div className="text-xs text-white/60 space-y-2 mb-8 border-l-2 border-magenta/40 pl-3">
               <div>
+                <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Phone & Email:</strong>
+                <span>+91 88660 09344 | kunalartisan@gmail.com</span>
+              </div>
+              <div>
                 <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Factory Address:</strong>
                 <span>Plot no 828, Santej, Opp. Neelkanth Hotel, Rakanpur, Taluka Kalol, Gujarat - 382721</span>
               </div>

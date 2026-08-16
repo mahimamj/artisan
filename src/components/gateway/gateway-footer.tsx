@@ -13,7 +13,7 @@ export function GatewayFooter() {
             className="h-7 w-auto object-contain opacity-90"
           />
           <span className="text-[#1c1c1e]/20">|</span>
-          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited. | +91 88660 09344 | kunalartisan@gmail.com</p>
         </div>
 
         <div className="flex items-center gap-8 text-xs uppercase tracking-wider text-[#5f6368]">

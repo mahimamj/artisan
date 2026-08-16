@@ -49,12 +49,12 @@ export function Contact() {
                   {
                     icon: Mail,
                     label: "Email",
-                    value: "info@artisanventures.in",
+                    value: "kunalartisan@gmail.com",
                   },
                   {
                     icon: Phone,
                     label: "Phone",
-                    value: "+91 98250 00000",
+                    value: "+91 88660 09344",
                   },
                   {
                     icon: Clock,

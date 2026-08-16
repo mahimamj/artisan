@@ -294,3 +294,8 @@ export const COMPANY_ADDRESSES = {
     address: "44, Panchshil Bunglow, Opp Metro Pillar - 288, Near Naranpura Railway Crossing, Usmanpura, Ahmedabad, Gujarat - 380013"
   }
 } as const;
+
+export const COMPANY_CONTACT = {
+  phone: "+91 88660 09344",
+  email: "kunalartisan@gmail.com",
+} as const;
