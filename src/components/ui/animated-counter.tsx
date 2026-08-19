@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedCounterProps {
@@ -17,48 +16,32 @@ export function AnimatedCounter({
   suffix = "",
   label,
   className,
-  dark = false,
 }: AnimatedCounterProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(value);
 
   useEffect(() => {
-    if (!isInView) return;
-
-    const duration = 2000;
-    const steps = 60;
+    const duration = 1200;
+    const steps = 30;
     const increment = value / steps;
-    let current = 0;
     let step = 0;
 
     const timer = setInterval(() => {
       step++;
-      current = Math.min(Math.round(increment * step), value);
+      const current = Math.min(Math.round(increment * step), value);
       setCount(current);
       if (step >= steps) clearInterval(timer);
     }, duration / steps);
 
     return () => clearInterval(timer);
-  }, [isInView, value]);
+  }, [value]);
 
   return (
-    <div ref={ref} className={cn("text-center", className)}>
-      <div
-        className={cn(
-          "text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight tabular-nums",
-          dark ? "text-white" : "text-foreground"
-        )}
-      >
+    <div className={cn("text-center p-4 sm:p-5 rounded-[16px] bg-white border border-[#e6e6e6] card-shadow", className)}>
+      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1c1c1e] tabular-nums">
         {count}
-        <span className="text-magenta">{suffix}</span>
+        <span className="text-[#a20160] font-extrabold">{suffix}</span>
       </div>
-      <p
-        className={cn(
-          "mt-3 text-sm md:text-base font-medium tracking-wide",
-          dark ? "text-white/50" : "text-foreground-secondary"
-        )}
-      >
+      <p className="mt-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#5f6368]">
         {label}
       </p>
     </div>

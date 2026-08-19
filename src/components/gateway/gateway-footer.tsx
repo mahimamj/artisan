@@ -1,33 +1,49 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowUp, ShieldCheck } from "lucide-react";
 
 export function GatewayFooter() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="relative z-10 border-t border-[#e6e6e6] bg-[#f8f8f6] py-10 px-6 lg:px-12 text-[#5f6368] text-xs md:text-sm">
+    <footer className="relative z-10 border-t border-border bg-[#f8f8f6] py-10 px-6 lg:px-12 text-foreground-secondary text-xs md:text-sm">
+      {/* Top Gradient Line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-magenta via-[#0284c7] to-magenta" />
+
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <img
             src="/artisan-logo-transparent.png"
             alt="Artisan Ventures Logo"
-            className="h-7 w-auto object-contain opacity-90"
+            className="h-8 w-auto object-contain opacity-95"
           />
-          <span className="text-[#1c1c1e]/20">|</span>
-          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited. | +91 88660 09344 | kunalartisan@gmail.com</p>
+          <span className="hidden sm:inline text-foreground/20">|</span>
+          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited. | Ahmedabad, Gujarat | ISO 9001:2015 Certified</p>
         </div>
 
-        <div className="flex items-center gap-8 text-xs uppercase tracking-wider text-[#5f6368]">
-          <Link href="/labels" className="hover:text-[#1c1c1e] transition-colors">
-            Label Manufacturing
+        <div className="flex items-center gap-6 text-xs uppercase tracking-wider font-bold text-foreground-secondary">
+          <Link href="/labels" className="hover:text-magenta transition-colors">
+            Label Division
           </Link>
-          <Link href="/printer-rental" className="hover:text-[#1c1c1e] transition-colors">
-            Printer Rental
+          <Link href="/printer-rental" className="hover:text-[#0284c7] transition-colors">
+            Printer Fleet
           </Link>
-          <Link href="/labels#contact" className="hover:text-[#1c1c1e] transition-colors">
+          <Link href="/labels#contact" className="hover:text-magenta transition-colors">
             Contact
           </Link>
+          <button
+            onClick={scrollToTop}
+            className="h-9 w-9 rounded-full bg-white border border-border/80 flex items-center justify-center text-foreground hover:text-magenta hover:border-magenta transition-all duration-300 card-shadow"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={16} />
+          </button>
         </div>
       </div>
     </footer>
   );
 }
+

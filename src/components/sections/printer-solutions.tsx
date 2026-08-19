@@ -1,89 +1,133 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Filter, Wrench, Sparkles } from "lucide-react";
 import { FEATURED_RENTAL_PRINTERS, PRINTER_SERVICES } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/motion/fade-in";
+import { SectionHeader, FadeIn } from "@/components/motion/fade-in";
+
+const BRANDS = ["All", "HP", "Konica Minolta", "Kyocera", "Sharp", "Brother"];
 
 export function PrinterSolutions() {
+  const [selectedBrand, setSelectedBrand] = useState("All");
+
+  const filteredPrinters = selectedBrand === "All"
+    ? FEATURED_RENTAL_PRINTERS
+    : FEATURED_RENTAL_PRINTERS.filter((p) =>
+        p.brand.toLowerCase().includes(selectedBrand.toLowerCase())
+      );
+
   return (
-    <section id="printers" className="section-padding bg-white text-[#1c1c1e] border-y border-[#e6e6e6]">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+    <section id="printers" className="section-padding bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] text-[#1c1c1e] border-y border-border/80 relative overflow-hidden">
+      {/* Visual Accent Ambient Glows */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#0284c7]/8 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-magenta/5 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          label="Growth Vertical — Hardware Fleet"
-          title="Enterprise Printer Rental Fleet (All 9 Models)"
-          description="Explore our complete line-up of A3 and A4 multifunction printer rental models from HP, Konica Minolta, Kyocera, Sharp, and Brother — all with free toner, maintenance, and service."
+          label="Enterprise Fleet Solutions"
+          title="Multifunction Industrial Printer Rental Fleet"
+          description="Explore our curated 9-model enterprise fleet spanning HP, Konica Minolta, Kyocera, Sharp, and Brother — featuring zero capital expenditure, 100% free toner, and guaranteed 4-hour service."
           align="center"
         />
 
-        {/* 9 FULL FEATURED PRINTER CARDS SHOWCASE GRID */}
-        <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {FEATURED_RENTAL_PRINTERS.map((printer) => (
+        {/* Brand Interactive Filter Tabs */}
+        <div className="mt-8 flex items-center justify-center">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl sm:rounded-full bg-white border border-border/90 card-shadow max-w-full">
+            <span className="px-3 py-1 text-[11px] sm:text-xs font-bold text-foreground-secondary flex items-center gap-1">
+              <Filter size={12} className="text-[#0284c7]" /> Brand:
+            </span>
+            {BRANDS.map((brand) => {
+              const isActive = selectedBrand === brand;
+              return (
+                <button
+                  key={brand}
+                  onClick={() => setSelectedBrand(brand)}
+                  className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all duration-300 ${
+                    isActive
+                      ? "bg-[#0284c7] text-white shadow-md shadow-[#0284c7]/25"
+                      : "text-foreground-secondary hover:text-foreground hover:bg-[#f1f5f9]"
+                  }`}
+                >
+                  {brand}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* PRINTER SHOWCASE GRID */}
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {filteredPrinters.map((printer) => (
             <div
               key={printer.id}
-              className="h-full p-5 sm:p-6 rounded-[20px] bg-[#f8f8f6] border border-[#e6e6e6] hover:border-[#0284c7]/50 card-shadow hover:card-shadow-hover transition-all duration-300 flex flex-col justify-between group"
+              className="h-full p-6 rounded-[24px] bg-white border border-border/90 hover:border-[#0284c7]/60 card-shadow hover:card-shadow-hover transition-all duration-400 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden"
             >
+              {/* Subtle top indicator bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               <div>
                 {/* Header Badges */}
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#0284c7]/10 text-[#0284c7] border border-[#0284c7]/20">
+                <div className="flex items-center justify-between gap-2 mb-3.5">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#0284c7]/10 text-[#0284c7] border border-[#0284c7]/20 flex items-center gap-1">
+                    <Sparkles size={11} />
                     {printer.brand}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#d97706]/10 text-[#d97706] border border-[#d97706]/20">
-                    {printer.speed} SPEED
+                  <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#d97706]/10 text-[#b45309] border border-[#d97706]/20">
+                    {printer.speed}
                   </span>
                 </div>
 
-                {/* Unclipped Image Container */}
-                <div className="relative w-full h-44 sm:h-48 md:h-52 rounded-[14px] bg-white border border-[#e6e6e6] p-2.5 mb-4 flex items-center justify-center overflow-hidden group-hover:border-[#0284c7]/30 transition-colors">
+                {/* Image Container with Hover Zoom */}
+                <div className="relative w-full h-48 sm:h-52 rounded-[18px] bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9] border border-border/60 p-3 mb-4 flex items-center justify-center overflow-hidden group-hover:border-[#0284c7]/30 transition-colors">
                   <Image
                     src={printer.image}
                     alt={printer.model}
                     fill
-                    className="object-contain p-2 group-hover:scale-[1.04] transition-transform duration-500"
+                    className="object-contain p-3 group-hover:scale-106 transition-transform duration-600 ease-out"
                     sizes="(max-width: 768px) 100vw, 30vw"
                   />
-                  <div className="absolute top-2 left-2">
-                    <span className="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-white/90 text-[#1c1c1e] border border-[#e6e6e6] shadow-xs">
+                  <div className="absolute top-2.5 left-2.5">
+                    <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider bg-white/95 text-[#1c1c1e] border border-border/80 shadow-xs">
                       {printer.output}
                     </span>
                   </div>
                 </div>
 
                 {/* Model Title */}
-                <h3 className="font-serif-heading text-lg sm:text-xl font-bold text-[#1c1c1e] mb-2 leading-snug group-hover:text-[#0284c7] transition-colors">
+                <h3 className="text-xl font-bold text-[#1c1c1e] mb-2 leading-snug group-hover:text-[#0284c7] transition-colors">
                   {printer.model}
                 </h3>
 
-                {/* Feature Tags */}
-                <div className="flex flex-wrap gap-1 mb-3">
-                  <span className="bg-white border border-[#e6e6e6] text-[#1c1c1e] text-[10px] font-semibold px-2 py-0.5 rounded">
-                    {printer.tray}
+                {/* Feature Specs */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  <span className="bg-[#f1f5f9] border border-border/70 text-[#1c1c1e] text-[10px] font-bold px-2.5 py-1 rounded-md">
+                    Paper Tray: {printer.tray}
                   </span>
-                  <span className="bg-[#0284c7]/10 text-[#0284c7] text-[10px] font-semibold px-2 py-0.5 rounded">
+                  <span className="bg-[#0284c7]/10 text-[#0284c7] text-[10px] font-bold px-2.5 py-1 rounded-md">
                     ADF + Duplex + Network
                   </span>
                 </div>
 
-                {/* Checklist */}
-                <ul className="space-y-1.5 pt-3 border-t border-[#e6e6e6] text-xs text-[#5f6368]">
+                {/* Feature Checklist */}
+                <ul className="space-y-2 pt-3.5 border-t border-border/60 text-xs">
                   {printer.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2">
-                      <CheckCircle2 size={14} className="text-[#0284c7] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#1c1c1e] font-medium">{feat}</span>
+                      <CheckCircle2 size={15} className="text-[#0284c7] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#334155] font-semibold">{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Action Button */}
-              <div className="mt-5 pt-4 border-t border-[#e6e6e6]">
-                <Button asChild className="w-full bg-[#0284c7] text-white hover:bg-[#0284c7]/90 font-bold uppercase tracking-wider text-xs h-10 rounded-[10px] shadow-sm">
-                  <Link href="/printer-rental#contact-rental">
-                    Rent {printer.brand} ({printer.speed})
-                    <ArrowRight size={14} />
+              <div className="mt-6 pt-4 border-t border-border/60">
+                <Button asChild className="w-full bg-[#0284c7] text-white hover:bg-[#0369a1] font-bold uppercase tracking-wider text-xs h-11 rounded-[12px] shadow-md shadow-[#0284c7]/20 transition-all duration-300">
+                  <Link href="/printer-rental#contact-rental" className="flex items-center justify-center gap-2">
+                    <span>Rent {printer.brand} Model</span>
+                    <ArrowRight size={15} />
                   </Link>
                 </Button>
               </div>
@@ -91,28 +135,35 @@ export function PrinterSolutions() {
           ))}
         </div>
 
-        {/* Managed Services Included Banner */}
-        <div className="mt-8 sm:mt-10 p-5 sm:p-6 rounded-[20px] bg-[#f8f8f6] border border-[#e6e6e6] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-          <div className="flex items-start sm:items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-[#0284c7]/10 border border-[#0284c7]/20 flex items-center justify-center text-[#0284c7] shrink-0">
-              <ShieldCheck size={24} />
+        {/* All-Inclusive Managed Services Guarantee Banner */}
+        <FadeIn delay={0.2}>
+          <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-[24px] bg-white border border-border/90 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#0284c7]/10 blur-[80px] rounded-full pointer-events-none" />
+
+            <div className="flex items-start sm:items-center gap-4 relative z-10">
+              <div className="h-14 w-14 rounded-2xl bg-[#0284c7]/10 border border-[#0284c7]/30 flex items-center justify-center text-[#0284c7] shrink-0">
+                <ShieldCheck size={30} />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-[#0f172a]">100% Comprehensive Rental Service Guarantee</h4>
+                <p className="text-xs sm:text-sm text-[#64748b] mt-1 leading-relaxed">
+                  Every rental unit includes free genuine toner supply, complete maintenance, hardware breakdown replacement, and rapid 4-hour on-site technician response across Gujarat.
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-sm sm:text-base font-bold text-[#1c1c1e]">All 9 Printer Models Include Full Support</h4>
-              <p className="text-xs text-[#5f6368] mt-0.5">Free Genuine Toner Replenishment • 100% Maintenance & Repairs • 4-Hour On-Site Support Response</p>
+
+            <div className="flex flex-wrap gap-2 relative z-10 shrink-0">
+              {PRINTER_SERVICES.map((s) => (
+                <span key={s} className="px-3 py-1.5 rounded-full text-xs font-bold bg-[#f8fafc] text-[#0f172a] border border-border flex items-center gap-1.5">
+                  <Wrench size={13} className="text-[#0284c7]" />
+                  {s}
+                </span>
+              ))}
             </div>
           </div>
-
-          <div className="flex flex-wrap gap-1.5">
-            {PRINTER_SERVICES.map((s) => (
-              <span key={s} className="px-2.5 py-1 rounded-full text-xs font-semibold bg-white text-[#1c1c1e] border border-[#e6e6e6]">
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-
+        </FadeIn>
       </div>
     </section>
   );
 }
+

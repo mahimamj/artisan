@@ -55,15 +55,12 @@ export function GatewaySelector() {
         {/* CARD 01 — LABEL MANUFACTURING */}
         <Link
           href="/labels"
-          className="flex-1 transition-all duration-500 ease-out focus:outline-none group"
+          className="flex-1 transition-all duration-500 ease-out focus:outline-none group md:flex-1"
           onMouseEnter={() => setHoveredCard("labels")}
           onMouseLeave={() => setHoveredCard(null)}
-          style={{
-            flexGrow: hoveredCard === "labels" ? 1.3 : hoveredCard === "printers" ? 0.8 : 1,
-          }}
         >
           <div
-            className={`h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] p-6 sm:p-8 lg:p-10 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
+            className={`h-full min-h-[260px] sm:min-h-[320px] lg:min-h-[380px] p-6 sm:p-8 lg:p-10 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
               hoveredCard === "labels"
                 ? "border-[#a20160]/60 bg-gradient-to-br from-[#a20160]/[0.04] via-white to-white shadow-2xl shadow-[#a20160]/15"
                 : "border-[#e6e6e6] bg-white hover:border-[#a20160]/40 card-shadow-hover"
@@ -88,11 +85,11 @@ export function GatewaySelector() {
             </div>
 
             {/* Content Area */}
-            <div className="my-6 sm:my-8 relative z-10">
+            <div className="my-5 sm:my-8 relative z-10">
               <h2 className="font-serif-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#a20160] transition-colors duration-300">
                 Label Manufacturing
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-[#5f6368] leading-relaxed max-w-lg">
+              <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-[#5f6368] leading-relaxed max-w-lg">
                 Premium self-adhesive labels engineered for FMCG, cosmetics, pharma, food and industrial brands.
               </p>
             </div>
@@ -110,12 +107,9 @@ export function GatewaySelector() {
         {/* CARD 02 — PRINTER RENTAL */}
         <Link
           href="/printer-rental"
-          className="flex-1 transition-all duration-500 ease-out focus:outline-none group"
+          className="flex-1 transition-all duration-500 ease-out focus:outline-none group md:flex-1"
           onMouseEnter={() => setHoveredCard("printers")}
           onMouseLeave={() => setHoveredCard(null)}
-          style={{
-            flexGrow: hoveredCard === "printers" ? 1.3 : hoveredCard === "labels" ? 0.8 : 1,
-          }}
         >
           <div
             className={`h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] p-6 sm:p-8 lg:p-10 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
@@ -143,11 +137,11 @@ export function GatewaySelector() {
             </div>
 
             {/* Content Area */}
-            <div className="my-6 sm:my-8 relative z-10">
+            <div className="my-5 sm:my-8 relative z-10">
               <h2 className="font-serif-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#0284c7] transition-colors duration-300">
                 Printer Rental
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-[#5f6368] leading-relaxed max-w-lg">
+              <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-[#5f6368] leading-relaxed max-w-lg">
                 A4 and A3 colour and monochrome printer solutions with installation, maintenance and service support.
               </p>
             </div>

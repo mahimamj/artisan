@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Mail, Phone, Clock, Check } from "lucide-react";
+import { MapPin, Mail, Phone, Clock, Check, MessageSquare, Send, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,46 +16,62 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-background-secondary border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="contact" className="section-padding bg-gradient-to-b from-[#f8fafc] via-white to-[#f8f8f6] border-t border-border relative overflow-hidden">
+      {/* Background Accent Glow */}
+      <div className="absolute top-1/3 right-10 -translate-y-1/2 w-96 h-96 bg-magenta/5 blur-[160px] rounded-full pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          label="Contact"
-          title="Start Your Project"
-          description="Tell us about your labeling or printer rental requirements. Our engineering team will respond within 24 hours."
+          label="Get In Touch"
+          title="Start Your Project With Artisan"
+          description="Tell us about your custom label manufacturing or industrial printer fleet requirements. Our engineering specialists respond within 24 hours."
           align="center"
         />
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Side — Location & Details */}
           <FadeIn>
-            <div className="h-full p-8 lg:p-10 rounded-[20px] bg-background border border-border card-shadow flex flex-col justify-between">
+            <div className="h-full p-8 lg:p-10 rounded-[28px] bg-white border border-border/80 card-shadow flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-magenta/5 rounded-bl-full pointer-events-none" />
+
               <div>
-                <h3 className="text-2xl font-bold tracking-tight text-foreground">Get in Touch</h3>
-                <p className="mt-3 text-foreground-secondary text-[15px] leading-relaxed">
-                  Visit our manufacturing facility or reach out to discuss your
-                  premium labeling and printing requirements.
+                <div className="flex items-center justify-between gap-3 mb-6">
+                  <h3 className="text-2xl font-bold tracking-tight text-foreground">Contact & Facility Details</h3>
+                  <a
+                    href="https://wa.me/918866009344?text=Hello%20Artisan%20Ventures,%20I%20would%20like%20to%20request%20a%20quote."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white transition-all duration-300 flex items-center gap-1.5 shadow-xs"
+                  >
+                    <MessageSquare size={14} />
+                    WhatsApp Quote
+                  </a>
+                </div>
+
+                <p className="text-foreground-secondary text-xs sm:text-sm leading-relaxed">
+                  Visit our state-of-the-art manufacturing facility in Kalol / Ahmedabad or contact us directly to discuss specifications, samples, and volume pricing.
                 </p>
 
                 <div className="mt-8 space-y-6">
                   {[
                     {
                       icon: MapPin,
-                      label: "Factory Address",
+                      label: "Factory & Manufacturing Plant",
                       value: "Plot no 828, Santej, Opposite Neelkanth Hotel,\nbehind Bhavi Tubes, Rakanpur, Taluka Kalol,\nGujarat - 382721",
                     },
                     {
                       icon: MapPin,
-                      label: "Registered / Office Address",
+                      label: "Registered Corporate Office",
                       value: "44, Panchshil Bunglow, Opp Metro Pillar - 288,\nNear Naranpura Railway Crossing, Usmanpura,\nAhmedabad, Gujarat - 380013",
                     },
                     {
                       icon: Mail,
-                      label: "Email",
+                      label: "Direct Email",
                       value: "kunalartisan@gmail.com",
                     },
                     {
                       icon: Phone,
-                      label: "Phone",
+                      label: "Hotline & Inquiries",
                       value: "+91 88660 09344",
                     },
                     {
@@ -64,15 +80,15 @@ export function Contact() {
                       value: "Mon – Sat: 9:00 AM – 6:30 PM IST",
                     },
                   ].map((item) => (
-                    <div key={item.label} className="flex gap-4">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-magenta/10 border border-magenta/20">
-                        <item.icon size={18} strokeWidth={1.5} className="text-magenta" />
+                    <div key={item.label} className="flex gap-4 group">
+                      <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[14px] bg-magenta/10 border border-magenta/20 group-hover:scale-105 transition-transform duration-300">
+                        <item.icon size={20} strokeWidth={1.75} className="text-magenta" />
                       </div>
                       <div>
-                        <div className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground-secondary/70">
+                        <div className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-foreground-secondary/70">
                           {item.label}
                         </div>
-                        <div className="mt-1 text-[15px] text-foreground font-medium whitespace-pre-line leading-relaxed">
+                        <div className="mt-0.5 text-xs sm:text-sm text-foreground font-semibold whitespace-pre-line leading-relaxed">
                           {item.value}
                         </div>
                       </div>
@@ -81,80 +97,107 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-[14px] overflow-hidden border border-border aspect-[16/9] bg-background-secondary relative">
+              <div className="mt-8 rounded-[18px] overflow-hidden border border-border/80 aspect-[16/9] bg-[#f8f8f6] relative shadow-inner">
                 <iframe
                   title="Artisan Ventures location"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=72.45%2C23.00%2C72.65%2C23.18&layer=mapnik&marker=23.10%2C72.51"
-                  className="w-full h-full border-0 filter"
+                  className="w-full h-full border-0"
                   loading="lazy"
                 />
               </div>
             </div>
           </FadeIn>
 
-          {/* Right Side — Form */}
+          {/* Right Side — Interactive Quote Form */}
           <FadeIn delay={0.15}>
             <form
               onSubmit={handleSubmit}
-              className="h-full p-8 lg:p-10 rounded-[20px] bg-background border border-border card-shadow"
+              className="h-full p-8 lg:p-10 rounded-[28px] bg-white border border-border/80 card-shadow flex flex-col justify-between relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-magenta to-[#0284c7]" />
+
               {submitted ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-16">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-magenta/10 mb-6">
-                    <Check className="text-2xl text-magenta" />
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
+                    <Check className="text-3xl text-emerald-600" />
                   </div>
-                  <h3 className="text-2xl font-bold tracking-tight text-foreground">Thank You</h3>
-                  <p className="mt-3 text-foreground-secondary max-w-sm">
-                    Your inquiry has been received. Our team will contact you within 24 hours.
+                  <h3 className="text-2xl font-bold tracking-tight text-foreground">Inquiry Received</h3>
+                  <p className="mt-3 text-foreground-secondary text-xs sm:text-sm max-w-sm leading-relaxed">
+                    Thank you! Our engineering team will review your specifications and contact you within 24 hours with a custom proposal.
                   </p>
+                  <Button
+                    type="button"
+                    onClick={() => setSubmitted(false)}
+                    variant="outline"
+                    className="mt-6 text-xs font-bold uppercase tracking-wider rounded-full"
+                  >
+                    Submit Another Requirement
+                  </Button>
                 </div>
               ) : (
                 <>
-                  <h3 className="text-2xl font-bold tracking-tight text-foreground mb-8">
-                    Request a Quote
-                  </h3>
-                  <div className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                          Name
-                        </label>
-                        <Input id="name" name="name" placeholder="Your name" required />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-6">
+                      <h3 className="text-2xl font-bold tracking-tight text-foreground">
+                        Request a Custom Quote
+                      </h3>
+                      <span className="px-2.5 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-wider bg-magenta/10 text-magenta border border-magenta/20 flex items-center gap-1">
+                        <Sparkles size={11} />
+                        24h Response
+                      </span>
+                    </div>
+
+                    <div className="space-y-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                            Full Name *
+                          </label>
+                          <Input id="name" name="name" placeholder="John Doe" required className="h-11 rounded-[12px] text-xs sm:text-sm border-border/80 focus:border-magenta" />
+                        </div>
+                        <div>
+                          <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                            Company Name *
+                          </label>
+                          <Input id="company" name="company" placeholder="Enterprise Ltd." required className="h-11 rounded-[12px] text-xs sm:text-sm border-border/80 focus:border-magenta" />
+                        </div>
                       </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                            Corporate Email *
+                          </label>
+                          <Input id="email" name="email" type="email" placeholder="you@company.com" required className="h-11 rounded-[12px] text-xs sm:text-sm border-border/80 focus:border-magenta" />
+                        </div>
+                        <div>
+                          <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                            Phone / WhatsApp
+                          </label>
+                          <Input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" className="h-11 rounded-[12px] text-xs sm:text-sm border-border/80 focus:border-magenta" />
+                        </div>
+                      </div>
+
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                          Company
+                        <label htmlFor="requirements" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                          Project Requirements & Specifications *
                         </label>
-                        <Input id="company" name="company" placeholder="Company name" required />
+                        <Textarea
+                          id="requirements"
+                          name="requirements"
+                          rows={5}
+                          placeholder="Please mention label quantities, substrate type (e.g. White PP, Chromo, Clear), finishing (Foil, Spot UV), or printer rental requirements..."
+                          required
+                          className="rounded-[14px] text-xs sm:text-sm border-border/80 focus:border-magenta p-3.5"
+                        />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                          Email
-                        </label>
-                        <Input id="email" name="email" type="email" placeholder="you@company.com" required />
-                      </div>
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                          Phone
-                        </label>
-                        <Input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="requirements" className="block text-sm font-medium text-foreground mb-2">
-                        Requirements
-                      </label>
-                      <Textarea
-                        id="requirements"
-                        name="requirements"
-                        placeholder="Describe your labeling or printing requirements..."
-                        required
-                      />
-                    </div>
-                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-magenta text-white hover:bg-magenta/90 font-semibold">
-                      Submit Inquiry
+                  </div>
+
+                  <div className="mt-8">
+                    <Button type="submit" size="lg" className="w-full bg-magenta text-white hover:bg-magenta/90 font-bold uppercase tracking-wider text-xs h-12 rounded-[14px] shadow-lg shadow-magenta/25 flex items-center justify-center gap-2">
+                      <Send size={15} />
+                      Submit Quotation Inquiry
                     </Button>
                   </div>
                 </>
@@ -166,3 +209,4 @@ export function Contact() {
     </section>
   );
 }
+

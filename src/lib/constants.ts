@@ -67,13 +67,34 @@ export const INDUSTRIES = [
 ] as const;
 
 export const MANUFACTURING_STEPS = [
-  { title: "Material Selection", description: "Premium substrates sourced to exact specifications." },
-  { title: "Design & Prepress", description: "Precision artwork preparation and color calibration." },
-  { title: "Precision Printing", description: "State-of-the-art flexographic and digital printing." },
-  { title: "Finishing", description: "Die-cutting, lamination, and specialty finishing." },
-  { title: "Quality Inspection", description: "Multi-stage QC with 99% accuracy standards." },
-  { title: "Packaging", description: "Secure packaging for global distribution." },
-  { title: "Delivery", description: "Reliable logistics to enterprise clients worldwide." },
+  {
+    title: "Substrate Audit",
+    description: "Analyzing container shape, moisture levels, and adhesive bonding requirements.",
+  },
+  {
+    title: "Digital Pre-Press",
+    description: "Color calibration, proofing, and variable data layout preparation.",
+  },
+  {
+    title: "Flexo & Digital Print",
+    description: "High-speed UV flexo and digital printing up to 1200 DPI resolution.",
+  },
+  {
+    title: "Foil & Spot UV",
+    description: "Applying metallic foil stamping, drip-off texture, and selective varnish.",
+  },
+  {
+    title: "Precision Die-Cut",
+    description: "Rotary die-cutting, micro-perforations, and matrix waste stripping.",
+  },
+  {
+    title: "Optical Quality Scan",
+    description: "100% automated camera inspection checking every label for defects.",
+  },
+  {
+    title: "Roll Rewind & Ship",
+    description: "Custom core roll winding, vacuum shrink wrapping, and fast dispatch.",
+  },
 ] as const;
 
 export const FEATURED_WORK = [
@@ -488,3 +509,5 @@ export const COMPANY_CONTACT = {
   phone: "+91 88660 09344",
   email: "kunalartisan@gmail.com",
 } as const;
+
+
