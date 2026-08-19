@@ -318,6 +318,25 @@ export const PRINTER_SERVICES = [
   "Accessories",
 ] as const;
 
+export const RENTAL_ADVANTAGES = [
+  {
+    title: "Zero Capital Outlay",
+    description: "No large upfront equipment investment. Predictable monthly rental plans.",
+  },
+  {
+    title: "100% Maintenance & Service",
+    description: "Free preventive maintenance, drum changes, and 4-hour on-site response.",
+  },
+  {
+    title: "Free Toners & Consumables",
+    description: "All genuine toner cartridges, developer units, and spares supplied free.",
+  },
+  {
+    title: "Dedicated Support Helpdesk",
+    description: "Direct access to certified network & hardware technicians for fast resolution.",
+  },
+] as const;
+
 export const STATISTICS = [
   { value: 20, suffix: "+", label: "Years Experience" },
   { value: 1000, suffix: "+", label: "Business Clients" },
