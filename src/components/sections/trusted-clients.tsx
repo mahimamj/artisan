@@ -101,6 +101,8 @@ export function TrustedClients() {
                 <img
                   src={client.logo}
                   alt={`${client.name} Logo`}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-12 sm:max-h-14 md:max-h-16 max-w-full object-contain filter group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
