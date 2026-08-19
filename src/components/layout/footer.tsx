@@ -5,8 +5,8 @@ import { FOOTER_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-dark text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+    <footer className="bg-white text-[#1c1c1e] border-t border-[#e6e6e6]">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           <div className="lg:col-span-2">
             <div className="mb-6">
@@ -16,20 +16,20 @@ export function Footer() {
                 className="h-10 md:h-12 w-auto object-contain"
               />
             </div>
-            <p className="text-white/50 text-[15px] leading-relaxed max-w-sm mb-4">
+            <p className="text-[#5f6368] text-[15px] leading-relaxed max-w-sm mb-4">
               Premium label manufacturing & industrial printing solutions engineered for global enterprise clients.
             </p>
-            <div className="text-xs text-white/60 space-y-2 mb-8 border-l-2 border-magenta/40 pl-3">
+            <div className="text-xs text-[#5f6368] space-y-2 mb-8 border-l-2 border-[#a20160]/40 pl-3">
               <div>
-                <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Phone & Email:</strong>
+                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Phone & Email:</strong>
                 <span>+91 88660 09344 | kunalartisan@gmail.com</span>
               </div>
               <div>
-                <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Factory Address:</strong>
+                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Factory Address:</strong>
                 <span>Plot no 828, Santej, Opp. Neelkanth Hotel, Rakanpur, Taluka Kalol, Gujarat - 382721</span>
               </div>
               <div>
-                <strong className="text-white/80 block uppercase tracking-wider text-[10px]">Registered Office:</strong>
+                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Registered Office:</strong>
                 <span>44, Panchshil Bunglow, Opp Metro Pillar - 288, Usmanpura, Ahmedabad - 380013</span>
               </div>
             </div>
@@ -38,7 +38,7 @@ export function Footer() {
                 <a
                   key={social}
                   href="#"
-                  className="text-xs font-medium uppercase tracking-wider text-white/40 hover:text-magenta transition-colors"
+                  className="text-xs font-semibold uppercase tracking-wider text-[#5f6368] hover:text-[#a20160] transition-colors"
                   aria-label={social}
                 >
                   {social}
@@ -48,15 +48,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5f6368] mb-5">
               Products
             </h3>
             <ul className="space-y-3">
               {FOOTER_LINKS.products.map((item) => (
                 <li key={item}>
                   <Link
-                    href="#labels"
-                    className="text-[15px] text-white/60 hover:text-white transition-colors"
+                    href="/labels"
+                    className="text-[15px] text-[#5f6368] hover:text-[#1c1c1e] transition-colors"
                   >
                     {item}
                   </Link>
@@ -66,15 +66,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5f6368] mb-5">
               Industries
             </h3>
             <ul className="space-y-3">
               {FOOTER_LINKS.industries.map((item) => (
                 <li key={item}>
                   <Link
-                    href="#industries"
-                    className="text-[15px] text-white/60 hover:text-white transition-colors"
+                    href="/labels#industries"
+                    className="text-[15px] text-[#5f6368] hover:text-[#1c1c1e] transition-colors"
                   >
                     {item}
                   </Link>
@@ -84,10 +84,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5f6368] mb-5">
               Newsletter
             </h3>
-            <p className="text-[15px] text-white/50 mb-4 leading-relaxed">
+            <p className="text-[15px] text-[#5f6368] mb-4 leading-relaxed">
               Industry insights and manufacturing updates.
             </p>
             <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
@@ -95,11 +95,11 @@ export function Footer() {
                 type="email"
                 placeholder="Email address"
                 aria-label="Email address for newsletter"
-                className="flex-1 h-11 rounded-[14px] bg-white/5 border border-white/10 px-4 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-magenta/30"
+                className="flex-1 h-11 rounded-[14px] bg-[#f8f8f6] border border-[#e6e6e6] px-4 text-sm text-[#1c1c1e] placeholder:text-[#5f6368]/50 focus:outline-none focus:ring-2 focus:ring-[#a20160]/30"
               />
               <button
                 type="submit"
-                className="h-11 px-5 rounded-[14px] bg-magenta text-white text-sm font-medium hover:bg-magenta/90 transition-colors cursor-pointer"
+                className="h-11 px-5 rounded-[14px] bg-[#a20160] text-white text-sm font-medium hover:bg-[#a20160]/90 transition-colors cursor-pointer"
               >
                 Join
               </button>
@@ -107,8 +107,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/30">
+        <div className="mt-16 pt-8 border-t border-[#e6e6e6] flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-[#5f6368]">
             &copy; {new Date().getFullYear()} Artisan Ventures Private Limited. All rights reserved.
           </p>
           <div className="flex gap-6">
@@ -116,7 +116,7 @@ export function Footer() {
               <Link
                 key={item}
                 href="#"
-                className="text-sm text-white/30 hover:text-white/60 transition-colors"
+                className="text-sm text-[#5f6368] hover:text-[#1c1c1e] transition-colors"
               >
                 {item}
               </Link>
