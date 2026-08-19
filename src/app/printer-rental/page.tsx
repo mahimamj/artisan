@@ -49,12 +49,6 @@ export default function PrinterRentalPage() {
         <section className="relative py-14 sm:py-20 lg:py-24 px-5 sm:px-6 lg:px-12 overflow-hidden border-b border-[#e6e6e6] bg-gradient-to-b from-white via-[#f8f8f6] to-[#f8f8f6]">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0284c7]/10 rounded-full blur-[140px] pointer-events-none" />
           <div className="mx-auto max-w-7xl relative z-10">
-            {/* Hero content remainder... */}
-          </div>
-        </section>
-
-        {/* ... (rest of page content unchanged up to form section) ... */}
-
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#0284c7]/10 border border-[#0284c7]/20 text-[#0284c7] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-6">
                 <Sparkles size={14} />
