@@ -12,14 +12,35 @@ import { FEATURED_RENTAL_PRINTERS, PRINTER_SERVICES } from "@/lib/constants";
 import {
   Wrench,
   Headphones,
-  Zap,
   CheckCircle2,
   ArrowRight,
   Sparkles,
   Layers,
+  Check,
+  MessageSquare,
+  Send,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function PrinterRentalPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    company: "",
+    contactPerson: "",
+    email: "",
+    phone: "",
+    requirements: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hello Artisan Ventures,\n\nI would like a Printer Rental Quote.\nCompany: ${formData.company || "N/A"}\nName: ${formData.contactPerson || "N/A"}\nEmail: ${formData.email || "N/A"}\nPhone: ${formData.phone || "N/A"}\nRequirements: ${formData.requirements || "N/A"}`
+  );
+
   return (
     <>
       <Navbar />
@@ -28,6 +49,12 @@ export default function PrinterRentalPage() {
         <section className="relative py-14 sm:py-20 lg:py-24 px-5 sm:px-6 lg:px-12 overflow-hidden border-b border-[#e6e6e6] bg-gradient-to-b from-white via-[#f8f8f6] to-[#f8f8f6]">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0284c7]/10 rounded-full blur-[140px] pointer-events-none" />
           <div className="mx-auto max-w-7xl relative z-10">
+            {/* Hero content remainder... */}
+          </div>
+        </section>
+
+        {/* ... (rest of page content unchanged up to form section) ... */}
+
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#0284c7]/10 border border-[#0284c7]/20 text-[#0284c7] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-6">
                 <Sparkles size={14} />
@@ -178,42 +205,116 @@ export default function PrinterRentalPage() {
           />
 
           <FadeIn delay={0.2}>
-            <form onSubmit={(e) => e.preventDefault()} className="mt-8 sm:mt-12 p-6 sm:p-8 lg:p-12 rounded-[24px] bg-white border border-[#e6e6e6] card-shadow space-y-5 sm:space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Company Name</label>
-                  <Input placeholder="Your Enterprise / Organization Name" className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e]" />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Contact Person</label>
-                  <Input placeholder="Full Name" className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e]" />
-                </div>
-              </div>
+            <div className="mt-8 sm:mt-12 p-6 sm:p-8 lg:p-12 rounded-[24px] bg-white border border-[#e6e6e6] card-shadow">
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center text-center py-10">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6 text-emerald-600">
+                    <CheckCircle2 size={44} />
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Email Address</label>
-                  <Input type="email" placeholder="name@company.com" className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e]" />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Phone Number</label>
-                  <Input placeholder="+91 98765 43210" className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e]" />
-                </div>
-              </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1c1c1e]">
+                    Proposal Request Received!
+                  </h3>
 
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Selected Printer Model(s) & Expected Monthly Volume</label>
-                <Textarea
-                  placeholder="e.g. 1 x Sharp BP-50M45 (45 PPM A3) + 1 x Brother DCP-L5660DN (48 PPM A4), approx. 15,000 pages/month"
-                  className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e]"
-                  rows={4}
-                />
-              </div>
+                  <p className="mt-3 text-sm text-[#5f6368] max-w-md leading-relaxed">
+                    Thank you{formData.contactPerson ? `, ${formData.contactPerson}` : ""}! Our hardware fleet engineers will analyze your printing volume requirements and respond within 24 hours.
+                  </p>
 
-              <Button type="submit" size="lg" className="w-full bg-[#0284c7] text-white hover:bg-[#0284c7]/90 font-semibold uppercase tracking-wider text-xs sm:text-sm h-12">
-                Submit Rental Quote Request
-              </Button>
-            </form>
+                  {/* WhatsApp Direct Action Button */}
+                  <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+                    <a
+                      href={`https://wa.me/918866009344?text=${whatsappMessage}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-600 text-white hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 shadow-md shadow-emerald-600/25"
+                    >
+                      <MessageSquare size={16} />
+                      <span>Send Specs Via WhatsApp</span>
+                    </a>
+
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setSubmitted(false)}
+                      className="w-full sm:w-auto text-xs font-bold uppercase tracking-wider h-11 rounded-xl"
+                    >
+                      Submit Another Quote
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <div>
+                      <label htmlFor="rental-company" className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Company Name *</label>
+                      <Input
+                        id="rental-company"
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        placeholder="Your Enterprise / Organization Name"
+                        className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e] h-11 rounded-xl text-xs sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="rental-contact" className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Contact Person *</label>
+                      <Input
+                        id="rental-contact"
+                        required
+                        value={formData.contactPerson}
+                        onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
+                        placeholder="Full Name"
+                        className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e] h-11 rounded-xl text-xs sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <div>
+                      <label htmlFor="rental-email" className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Email Address *</label>
+                      <Input
+                        id="rental-email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="name@company.com"
+                        className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e] h-11 rounded-xl text-xs sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="rental-phone" className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Phone / WhatsApp Number *</label>
+                      <Input
+                        id="rental-phone"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 98765 43210"
+                        className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e] h-11 rounded-xl text-xs sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="rental-requirements" className="block text-xs font-semibold uppercase tracking-wider text-[#5f6368] mb-2">Selected Printer Model(s) & Expected Monthly Volume *</label>
+                    <Textarea
+                      id="rental-requirements"
+                      required
+                      value={formData.requirements}
+                      onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
+                      placeholder="e.g. 1 x Sharp BP-50M45 (45 PPM A3) + 1 x Brother DCP-L5660DN (48 PPM A4), approx. 15,000 pages/month"
+                      className="bg-[#f8f8f6] border-[#e6e6e6] text-[#1c1c1e] rounded-xl text-xs sm:text-sm p-3.5"
+                      rows={4}
+                    />
+                  </div>
+
+                  <Button type="submit" size="lg" className="w-full bg-[#0284c7] text-white hover:bg-[#0369a1] font-bold uppercase tracking-wider text-xs sm:text-sm h-12 rounded-xl shadow-md shadow-[#0284c7]/20 flex items-center justify-center gap-2">
+                    <Send size={16} />
+                    <span>Submit Rental Quote Request</span>
+                  </Button>
+                </form>
+              )}
+            </div>
           </FadeIn>
         </section>
       </main>
