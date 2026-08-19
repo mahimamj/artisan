@@ -76,8 +76,8 @@ export function MaterialGuide() {
   const [activeTab, setActiveTab] = useState<"materials" | "finishing">("materials");
 
   return (
-    <section id="materials" className="section-padding bg-background relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="materials" className="section-padding bg-background border-t border-border relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           label="Substrates & Enhancements"
           title="Material & Finishing Range"
@@ -86,11 +86,11 @@ export function MaterialGuide() {
         />
 
         {/* Tab Selector Buttons */}
-        <div className="mt-10 flex justify-center">
+        <div className="mt-6 sm:mt-8 flex justify-center">
           <div className="inline-flex p-1.5 rounded-full bg-background-secondary border border-border card-shadow">
             <button
               onClick={() => setActiveTab("materials")}
-              className={`px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
+              className={`px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
                 activeTab === "materials"
                   ? "bg-magenta text-white shadow-md shadow-magenta/20"
                   : "text-foreground-secondary hover:text-foreground"
@@ -100,7 +100,7 @@ export function MaterialGuide() {
             </button>
             <button
               onClick={() => setActiveTab("finishing")}
-              className={`px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
+              className={`px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
                 activeTab === "finishing"
                   ? "bg-magenta text-white shadow-md shadow-magenta/20"
                   : "text-foreground-secondary hover:text-foreground"
@@ -113,25 +113,25 @@ export function MaterialGuide() {
 
         {/* MATERIALS GRID */}
         {activeTab === "materials" && (
-          <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {MATERIAL_RANGE.map((mat) => (
               <StaggerItem key={mat.name}>
-                <div className="group h-full flex flex-col justify-between p-8 rounded-[20px] bg-background-secondary border border-border hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-400">
+                <div className="group h-full flex flex-col justify-between p-6 sm:p-7 rounded-[20px] bg-background-secondary border border-border hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-300">
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-magenta/10 text-magenta border border-magenta/20">
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-magenta/10 text-magenta border border-magenta/20">
                         {mat.tag}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300">
                       {mat.name}
                     </h3>
-                    <p className="mt-3 text-[14px] text-foreground-secondary leading-relaxed">
+                    <p className="mt-2.5 text-xs sm:text-sm text-foreground-secondary leading-relaxed">
                       {mat.description}
                     </p>
 
-                    <div className="mt-6 pt-5 border-t border-border/60">
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground-secondary/70 block mb-2">
+                    <div className="mt-5 pt-4 border-t border-border/60">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-foreground-secondary/70 block mb-1.5">
                         Best Applications
                       </span>
                       <p className="text-xs text-foreground font-medium leading-relaxed">
@@ -140,8 +140,8 @@ export function MaterialGuide() {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-border/40">
-                    <ul className="space-y-2">
+                  <div className="mt-5 pt-3.5 border-t border-border/40">
+                    <ul className="space-y-1.5">
                       {mat.properties.map((prop) => (
                         <li key={prop} className="flex items-center gap-2 text-xs text-foreground-secondary">
                           <Check size={14} className="text-magenta flex-shrink-0" />
@@ -158,20 +158,20 @@ export function MaterialGuide() {
 
         {/* FINISHING GRID */}
         {activeTab === "finishing" && (
-          <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <StaggerContainer className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
             {FINISHING_OPTIONS.map((finish) => {
               const Icon = finish.icon;
               return (
                 <StaggerItem key={finish.title}>
-                  <div className="group p-8 lg:p-10 rounded-[20px] bg-background-secondary border border-border hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-400 flex items-start gap-6">
-                    <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-[16px] bg-magenta/10 border border-magenta/20 text-magenta group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={26} strokeWidth={1.5} />
+                  <div className="group p-6 sm:p-8 rounded-[20px] bg-background-secondary border border-border hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-300 flex items-start gap-5">
+                    <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-[14px] bg-magenta/10 border border-magenta/20 text-magenta group-hover:scale-105 transition-transform duration-300">
+                      <Icon size={24} strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300">
                         {finish.title}
                       </h3>
-                      <p className="mt-3 text-[15px] text-foreground-secondary leading-relaxed">
+                      <p className="mt-2 text-xs sm:text-sm text-foreground-secondary leading-relaxed">
                         {finish.description}
                       </p>
                     </div>

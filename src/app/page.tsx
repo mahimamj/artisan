@@ -17,7 +17,7 @@ import { GatewayFooter } from "@/components/gateway/gateway-footer";
 
 export default function GatewayPage() {
   return (
-    <main className="relative min-h-screen bg-[#f8f8f6] text-[#1c1c1e] flex flex-col justify-between overflow-x-hidden">
+    <main className="relative min-h-screen bg-[#f8f8f6] text-[#1c1c1e] overflow-x-hidden">
       {/* Abstract Premium Light Background */}
       <GatewayBackground />
 
