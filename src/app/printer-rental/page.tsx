@@ -12,6 +12,7 @@ import { FEATURED_RENTAL_PRINTERS, PRINTER_SERVICES } from "@/lib/constants";
 import {
   Wrench,
   Headphones,
+  Zap,
   CheckCircle2,
   ArrowRight,
   Sparkles,
