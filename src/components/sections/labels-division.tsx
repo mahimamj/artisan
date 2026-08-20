@@ -47,7 +47,7 @@ export function LabelsDivision() {
             {LABEL_CATEGORIES.map((category) => {
               const tags = CATEGORY_TAGS[category.title] || ["Enterprise Grade", "Custom Die-Cut"];
               return (
-                <StaggerItem key={category.id}>
+                <StaggerItem key={category.title}>
                   <div
                     onClick={() => openQuoteModal(category.title)}
                     className="group h-full p-6 sm:p-7 rounded-[24px] bg-white border border-border/90 hover:border-magenta/60 card-shadow hover:card-shadow-hover transition-all duration-400 flex flex-col justify-between hover:-translate-y-1.5 cursor-pointer relative overflow-hidden"
