@@ -27,37 +27,25 @@ export function Navbar() {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled
-            ? "bg-background/90 backdrop-blur-xl border-b border-border/60 shadow-sm"
-            : "bg-transparent"
-        )}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f6]/95 backdrop-blur-md border-b border-[#e6e6e6]/80 shadow-xs transition-all duration-300">
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8"
+          className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8 py-3.5 sm:py-4"
           aria-label="Main navigation"
         >
           <Link href="/" className="flex items-center gap-3 group">
             <img 
               src="/artisan-logo-transparent.png" 
               alt="Artisan Ventures Private Limited" 
-              className="h-10 md:h-12 w-auto object-contain transition-all duration-300 drop-shadow-sm"
+              className="h-9 sm:h-11 w-auto object-contain transition-all duration-300 drop-shadow-sm"
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-7 lg:gap-9">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  "text-[14px] font-medium tracking-wide transition-colors relative group",
-                  scrolled
-                    ? "text-foreground-secondary hover:text-foreground"
-                    : "text-white/70 hover:text-white"
-                )}
+                className="text-[13px] xl:text-[14px] font-semibold tracking-wide text-[#5f6368] hover:text-[#1c1c1e] transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-magenta transition-all duration-300 group-hover:w-full" />
@@ -66,17 +54,14 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:block">
-            <Button asChild variant={scrolled ? "primary" : "outline"} size="sm">
+            <Button asChild variant="outline" size="sm" className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-4 sm:px-5 h-9 rounded-[10px] transition-all duration-300">
               <Link href="#contact">Request Quote</Link>
             </Button>
           </div>
 
           <button
             type="button"
-            className={cn(
-              "lg:hidden p-2 rounded-lg transition-colors",
-              scrolled ? "text-foreground hover:bg-border/50" : "text-white hover:bg-white/10"
-            )}
+            className="lg:hidden p-2 rounded-lg text-[#1c1c1e] hover:bg-black/5 transition-colors focus:outline-none"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}

@@ -56,7 +56,7 @@ export default function PrinterRentalPage() {
                 Artisan Printer Rental Solutions
               </div>
               <h1 className="font-serif-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#1c1c1e] max-w-4xl leading-[1.08]">
-                Enterprise Printer Rental & Managed Fleet Services
+                Enterprise Printer Rental & Managed Print Services
               </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-[#5f6368] max-w-3xl leading-relaxed">
                 Rent high-performance A3 and A4 printers from leading brands including <strong className="text-[#1c1c1e]">HP, Konica Minolta, Kyocera, Sharp, and Brother</strong> with zero upfront capital outlay, free toner replenishment, and 100% maintenance support.
