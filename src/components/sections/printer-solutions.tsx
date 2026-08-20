@@ -1,23 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Filter, Wrench, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Wrench, Sparkles } from "lucide-react";
 import { FEATURED_RENTAL_PRINTERS, PRINTER_SERVICES } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { SectionHeader, FadeIn } from "@/components/motion/fade-in";
 
-const BRANDS = ["All", "HP", "Konica Minolta", "Kyocera", "Sharp", "Brother"];
+const HOME_PRINTER_IDS = ["sharp-bp-50m45", "brother-dcp-l5660dn", "canon-ir-c3326"];
 
 export function PrinterSolutions() {
-  const [selectedBrand, setSelectedBrand] = useState("All");
-
-  const filteredPrinters = selectedBrand === "All"
-    ? FEATURED_RENTAL_PRINTERS
-    : FEATURED_RENTAL_PRINTERS.filter((p) =>
-        p.brand.toLowerCase().includes(selectedBrand.toLowerCase())
-      );
+  const homePrinters = FEATURED_RENTAL_PRINTERS.filter((p) =>
+    HOME_PRINTER_IDS.includes(p.id)
+  ).sort((a, b) => HOME_PRINTER_IDS.indexOf(a.id) - HOME_PRINTER_IDS.indexOf(b.id));
 
   return (
     <section id="printers" className="section-padding bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] text-[#1c1c1e] border-y border-border/80 relative overflow-hidden">
@@ -29,38 +24,13 @@ export function PrinterSolutions() {
         <SectionHeader
           label="Enterprise Fleet Solutions"
           title="Multifunction Industrial Printer Rental Fleet"
-          description="Explore our curated 9-model enterprise fleet spanning HP, Konica Minolta, Kyocera, Sharp, and Brother — featuring zero capital expenditure, 100% free toner, and guaranteed 4-hour service."
+          description="Explore our enterprise fleet featuring high-performance A3 & A4 monochrome and color models — zero capital expenditure, 100% free toner, and guaranteed 4-hour service response."
           align="center"
         />
 
-        {/* Brand Interactive Filter Tabs */}
-        <div className="mt-8 flex items-center justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl sm:rounded-full bg-white border border-border/90 card-shadow max-w-full">
-            <span className="px-3 py-1 text-[11px] sm:text-xs font-bold text-foreground-secondary flex items-center gap-1">
-              <Filter size={12} className="text-[#0284c7]" /> Brand:
-            </span>
-            {BRANDS.map((brand) => {
-              const isActive = selectedBrand === brand;
-              return (
-                <button
-                  key={brand}
-                  onClick={() => setSelectedBrand(brand)}
-                  className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all duration-300 ${
-                    isActive
-                      ? "bg-[#0284c7] text-white shadow-md shadow-[#0284c7]/25"
-                      : "text-foreground-secondary hover:text-foreground hover:bg-[#f1f5f9]"
-                  }`}
-                >
-                  {brand}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* PRINTER SHOWCASE GRID */}
+        {/* PRINTER SHOWCASE GRID (Top 3 Models Only) */}
         <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-          {filteredPrinters.map((printer) => (
+          {homePrinters.map((printer) => (
             <div
               key={printer.id}
               className="h-full p-6 rounded-[24px] bg-white border border-border/90 hover:border-[#0284c7]/60 card-shadow hover:card-shadow-hover transition-all duration-400 flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden"
@@ -133,6 +103,20 @@ export function PrinterSolutions() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* EXPLORE MORE BUTTON */}
+        <div className="mt-10 sm:mt-12 flex justify-center">
+          <Button
+            asChild
+            size="lg"
+            className="bg-[#0284c7] text-white hover:bg-[#0369a1] font-bold uppercase tracking-wider text-xs sm:text-sm h-12 px-8 rounded-full shadow-lg shadow-[#0284c7]/25 hover:shadow-xl hover:shadow-[#0284c7]/35 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2"
+          >
+            <Link href="/printer-rental#catalog">
+              <span>Explore More Printer Rental Models</span>
+              <ArrowRight size={18} />
+            </Link>
+          </Button>
         </div>
 
         {/* All-Inclusive Managed Services Guarantee Banner */}
