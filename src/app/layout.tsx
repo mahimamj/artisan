@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import { QuoteModalProvider } from "@/context/quote-modal-context";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -59,7 +60,9 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${cormorant.variable} scroll-smooth`}
     >
       <body className="min-h-screen antialiased bg-[#f8f8f6] text-[#1c1c1e] selection:bg-[#a20160]/15 selection:text-[#1c1c1e]">
-        {children}
+        <QuoteModalProvider>
+          {children}
+        </QuoteModalProvider>
       </body>
     </html>
   );

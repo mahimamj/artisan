@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import { useQuoteModal } from "@/context/quote-modal-context";
+
 export function GatewayNavbar() {
+  const { openQuoteModal } = useQuoteModal();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -48,12 +51,12 @@ export function GatewayNavbar() {
         {/* Right Action & Mobile Toggle */}
         <div className="flex items-center gap-3">
           <Button
-            asChild
             variant="outline"
             size="sm"
+            onClick={() => openQuoteModal()}
             className="hidden sm:inline-flex border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-4 sm:px-5 h-9 rounded-[10px] transition-all duration-300"
           >
-            <Link href="/labels#contact">Request a Quote</Link>
+            Request a Quote
           </Button>
 
           {/* Mobile Hamburger Toggle Button */}
@@ -90,12 +93,13 @@ export function GatewayNavbar() {
               ))}
               <div className="pt-2">
                 <Button
-                  asChild
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openQuoteModal();
+                  }}
                   className="w-full bg-[#a20160] text-white hover:bg-[#a20160]/90 text-xs font-bold uppercase tracking-wider h-11 rounded-xl"
                 >
-                  <Link href="/labels#contact" onClick={() => setMobileMenuOpen(false)}>
-                    Request a Quote
-                  </Link>
+                  Request a Quote
                 </Button>
               </div>
             </div>

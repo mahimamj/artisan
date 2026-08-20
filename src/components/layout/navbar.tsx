@@ -7,8 +7,10 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useQuoteModal } from "@/context/quote-modal-context";
 
 export function Navbar() {
+  const { openQuoteModal } = useQuoteModal();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -54,8 +56,13 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:block">
-            <Button asChild variant="outline" size="sm" className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-4 sm:px-5 h-9 rounded-[10px] transition-all duration-300">
-              <Link href="#contact">Request Quote</Link>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => openQuoteModal()}
+              className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-4 sm:px-5 h-9 rounded-[10px] transition-all duration-300"
+            >
+              Request Quote
             </Button>
           </div>
 

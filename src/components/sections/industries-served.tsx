@@ -9,6 +9,8 @@ import {
 } from "@/components/motion/fade-in";
 import { Sparkles, ArrowRight } from "lucide-react";
 
+import { useQuoteModal } from "@/context/quote-modal-context";
+
 const INDUSTRY_DETAILS: Record<string, { icon: string; material: string; desc: string }> = {
   Pharma: { icon: "💊", material: "White PP & Tamper-Evident", desc: "FDA compliance, batch tracking, & tamper safety." },
   Perfume: { icon: "✨", material: "Clear-on-Clear & Metallic Foil", desc: "Ultra-luxury glass bottle & box embellishments." },
@@ -22,6 +24,8 @@ const INDUSTRY_DETAILS: Record<string, { icon: string; material: string; desc: s
 };
 
 export function IndustriesServed() {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <section id="industries" className="section-padding bg-gradient-to-b from-[#f8f8f6] via-white to-[#f8fafc] border-t border-border relative overflow-hidden">
       {/* Visual background ambient glow */}
@@ -44,7 +48,10 @@ export function IndustriesServed() {
             };
             return (
               <StaggerItem key={industry}>
-                <div className="group relative flex flex-col justify-between p-6 rounded-[22px] border border-border/80 bg-white hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-400 hover:-translate-y-1.5 cursor-pointer overflow-hidden">
+                <div
+                  onClick={() => openQuoteModal(`${industry} Labels`)}
+                  className="group relative flex flex-col justify-between p-6 rounded-[22px] border border-border/80 bg-white hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-400 hover:-translate-y-1.5 cursor-pointer overflow-hidden"
+                >
                   {/* Subtle hover gradient top accent */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-magenta to-[#0284c7] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -68,7 +75,7 @@ export function IndustriesServed() {
                   </div>
 
                   <div className="mt-5 pt-3.5 border-t border-border/50 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-magenta">
-                    <span>View Solutions</span>
+                    <span>GET CUSTOM QUOTE ↗</span>
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
