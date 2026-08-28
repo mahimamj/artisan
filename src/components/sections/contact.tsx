@@ -72,7 +72,7 @@ export function Contact() {
                     {
                       icon: Phone,
                       label: "Hotline & Inquiries",
-                      value: "+91 98257 44787 (Kunal Shah)\n+91 93771 44222 (Sales)",
+                      value: "+91 98257 44787 (Kunal Patel)\n+91 93771 44222 (Sales)",
                     },
                     {
                       icon: Clock,

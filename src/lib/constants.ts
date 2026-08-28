@@ -513,7 +513,7 @@ export const GROUP_COMPANY = {
 
 export const COMPANY_CONTACT = {
   kunal: {
-    name: "Kunal Shah",
+    name: "Kunal Patel",
     email: "Kunal@artisanven.com",
     phone: "+91 98257 44787",
     rawPhone: "9825744787"
