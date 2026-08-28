@@ -34,11 +34,20 @@ const METRICS: Record<string, string> = {
   "Reliable Delivery": "99.8% On-Time",
 };
 
+const PILLAR_COLORS = [
+  { text: "text-[#81014d]", bg: "bg-[#81014d]/10", border: "border-[#81014d]/30", gradient: "from-[#81014d]/10 via-white to-white" },
+  { text: "text-[#026aa0]", bg: "bg-[#026aa0]/10", border: "border-[#026aa0]/30", gradient: "from-[#026aa0]/10 via-white to-white" },
+  { text: "text-[#ae5f05]", bg: "bg-[#ae5f05]/10", border: "border-[#ae5f05]/30", gradient: "from-[#ae5f05]/10 via-white to-white" },
+  { text: "text-[#059669]", bg: "bg-[#059669]/10", border: "border-[#059669]/30", gradient: "from-[#059669]/10 via-white to-white" },
+  { text: "text-[#7c3aed]", bg: "bg-[#7c3aed]/10", border: "border-[#7c3aed]/30", gradient: "from-[#7c3aed]/10 via-white to-white" },
+  { text: "text-[#0d9488]", bg: "bg-[#0d9488]/10", border: "border-[#0d9488]/30", gradient: "from-[#0d9488]/10 via-white to-white" },
+];
+
 export function WhyChoose() {
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-white via-[#fcfcfb] to-[#f8f8f6] border-t border-border relative overflow-hidden">
+    <section id="about" className="section-padding bg-gradient-to-b from-[#eaeae7] via-[#f4f4f1] to-[#eaeae7] border-t border-[#d8d8d5] relative overflow-hidden">
       {/* Visual Ambient Glow */}
-      <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[600px] h-[300px] bg-magenta/5 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[600px] h-[300px] bg-[#81014d]/10 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
@@ -49,29 +58,27 @@ export function WhyChoose() {
         />
 
         <StaggerContainer className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
-          {WHY_CHOOSE.map((feature) => {
+          {WHY_CHOOSE.map((feature, idx) => {
             const Icon = iconMap[feature.icon] || Sparkles;
             const metric = METRICS[feature.title] || "Enterprise Standard";
+            const theme = PILLAR_COLORS[idx % PILLAR_COLORS.length];
             return (
               <StaggerItem key={feature.title}>
-                <div className="group h-full p-7 sm:p-8 rounded-[24px] bg-white border border-border/80 hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-400 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden">
-                  {/* Glowing Accent Corner */}
-                  <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-magenta/10 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
+                <div className={`group h-full p-7 sm:p-8 rounded-[26px] bg-gradient-to-br ${theme.gradient} border ${theme.border} card-shadow hover:card-shadow-hover transition-all duration-400 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden`}>
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-gradient-to-br from-magenta/15 to-magenta/5 border border-magenta/25 text-magenta group-hover:scale-110 transition-transform duration-400">
-                        <Icon size={26} strokeWidth={1.75} />
+                      <div className={`flex h-14 w-14 items-center justify-center rounded-[20px] ${theme.bg} ${theme.border} border ${theme.text} group-hover:scale-110 transition-transform duration-400`}>
+                        <Icon size={26} strokeWidth={2} />
                       </div>
-                      <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-magenta/10 text-magenta border border-magenta/20">
+                      <span className={`px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider ${theme.text} ${theme.bg} border ${theme.border}`}>
                         {metric}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300">
+                    <h3 className={`text-2xl font-bold tracking-tight text-[#1c1c1e] group-hover:${theme.text} transition-colors duration-300`}>
                       {feature.title}
                     </h3>
-                    <p className="mt-3 text-xs sm:text-sm text-foreground-secondary leading-relaxed">
+                    <p className="mt-3 text-xs sm:text-sm text-[#4a4d52] leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

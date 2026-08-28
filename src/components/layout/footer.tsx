@@ -11,9 +11,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <img 
-                src="/artisan-logo-transparent.png" 
+                src="/artisan-logo.png" 
                 alt="Artisan Ventures Private Limited" 
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain"
               />
             </div>
             <p className="text-[#5f6368] text-[15px] leading-relaxed max-w-sm mb-4">
@@ -21,8 +21,13 @@ export function Footer() {
             </p>
             <div className="text-xs text-[#5f6368] space-y-2 mb-8 border-l-2 border-[#a20160]/40 pl-3">
               <div>
-                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Phone & Email:</strong>
-                <span>+91 88660 09344 | kunalartisan@gmail.com</span>
+                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Group Company (Digital Printing):</strong>
+                <span className="font-semibold text-[#a20160]">Kalpa Digi World</span>
+              </div>
+              <div>
+                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Email & Contact:</strong>
+                <span>Kunal@artisanven.com (Mo: +91 98257 44787)</span><br />
+                <span>Sales@artisanven.com (Mo: +91 93771 44222)</span>
               </div>
               <div>
                 <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Factory Address:</strong>
@@ -67,13 +72,13 @@ export function Footer() {
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5f6368] mb-5">
-              Industries
+              Printer Fleet
             </h3>
             <ul className="space-y-3">
-              {FOOTER_LINKS.industries.map((item) => (
+              {["Sharp BP-50M45", "Brother DCP-L5660DN", "Canon iR C3326", "HP Color LaserJet", "Konica Bizhub"].map((item) => (
                 <li key={item}>
                   <Link
-                    href="/labels#industries"
+                    href="/printer-rental"
                     className="text-[15px] text-[#5f6368] hover:text-[#1c1c1e] transition-colors"
                   >
                     {item}

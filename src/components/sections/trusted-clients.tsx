@@ -63,14 +63,11 @@ export function TrustedClients() {
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto">
             <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] text-magenta">
-              Trusted By Industry Leaders
+              ESTEEMED CLIENTS & ENTERPRISE PARTNERS
             </span>
-            <h2 className="mt-2.5 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-              Esteemed Brands We Manufacture For
+            <h2 className="mt-2.5 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground text-balance">
+              Esteemed Brands We Serve For Labels Solution & Printer Solutions for India's Leading Enterprises.
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-foreground-secondary leading-relaxed">
-              Engineering high-performance self-adhesive label solutions for India's leading enterprises.
-            </p>
           </div>
         </FadeIn>
       </div>

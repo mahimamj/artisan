@@ -15,48 +15,55 @@ export function GatewayNavbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/labels#about" },
-    { label: "Our Businesses", href: "#businesses" },
-    { label: "Printer Rental", href: "/printer-rental" },
-    { label: "Capabilities", href: "/labels#labels" },
-    { label: "Industries", href: "/labels#industries" },
+    { label: "Labels", href: "/labels" },
+    { label: "Printer Solution", href: "/printer-rental" },
+    { label: "Catalog", href: "/labels#catalog" },
     { label: "Contact", href: "/labels#contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f6]/90 backdrop-blur-md border-b border-[#e6e6e6]/80 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#eaeae7]/95 backdrop-blur-md border-b border-[#d8d8d5] transition-all duration-300">
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-12 py-3.5 sm:py-4 flex items-center justify-between">
         {/* Left: Official Logo */}
         <Link href="/" className="flex items-center group py-1">
           <img
-            src="/artisan-logo-transparent.png"
+            src="/artisan-logo.png"
             alt="Artisan Ventures Private Limited"
-            className="h-9 sm:h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+            className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
           />
         </Link>
 
         {/* Center: Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-7 lg:gap-9">
+        <div className="hidden lg:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-[12px] xl:text-[13px] font-semibold uppercase tracking-[0.14em] text-[#5f6368] hover:text-[#1c1c1e] transition-colors duration-300 relative group"
+              className="text-[12px] xl:text-[13px] font-semibold uppercase tracking-[0.12em] text-[#4a4d52] hover:text-[#1c1c1e] transition-colors duration-300 relative group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#a20160] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#81014d] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
 
         {/* Right Action & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
           <Button
             variant="outline"
             size="sm"
-            onClick={() => openQuoteModal()}
-            className="hidden sm:inline-flex border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-4 sm:px-5 h-9 rounded-[10px] transition-all duration-300"
+            onClick={() => openQuoteModal("Order Request")}
+            className="hidden sm:inline-flex border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-[11px] sm:text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300"
           >
-            Request a Quote
+            Request to Order
+          </Button>
+
+          <Button
+            size="sm"
+            onClick={() => openQuoteModal("Free Sample Pack")}
+            className="hidden sm:inline-flex bg-[#81014d] hover:bg-[#6b0140] text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm"
+          >
+            Request Free Sample
           </Button>
 
           {/* Mobile Hamburger Toggle Button */}
@@ -91,15 +98,25 @@ export function GatewayNavbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col gap-2.5">
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openQuoteModal("Order Request");
+                  }}
+                  className="w-full border-[#1c1c1e]/20 text-[#1c1c1e] text-xs font-bold uppercase tracking-wider h-10 rounded-xl"
+                >
+                  Request to Order
+                </Button>
                 <Button
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    openQuoteModal();
+                    openQuoteModal("Free Sample Pack");
                   }}
-                  className="w-full bg-[#a20160] text-white hover:bg-[#a20160]/90 text-xs font-bold uppercase tracking-wider h-11 rounded-xl"
+                  className="w-full bg-[#a20160] text-white hover:bg-[#a20160]/90 text-xs font-bold uppercase tracking-wider h-10 rounded-xl shadow-sm"
                 >
-                  Request a Quote
+                  Request Free Sample
                 </Button>
               </div>
             </div>

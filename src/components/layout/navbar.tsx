@@ -29,16 +29,16 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f6]/95 backdrop-blur-md border-b border-[#e6e6e6]/80 shadow-xs transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#eaeae7]/95 backdrop-blur-md border-b border-[#d8d8d5] shadow-xs transition-all duration-300">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8 py-3.5 sm:py-4"
           aria-label="Main navigation"
         >
           <Link href="/" className="flex items-center gap-3 group">
             <img 
-              src="/artisan-logo-transparent.png" 
+              src="/artisan-logo.png" 
               alt="Artisan Ventures Private Limited" 
-              className="h-9 sm:h-11 w-auto object-contain transition-all duration-300 drop-shadow-sm"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
@@ -47,7 +47,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[13px] xl:text-[14px] font-semibold tracking-wide text-[#5f6368] hover:text-[#1c1c1e] transition-colors relative group"
+                className="text-[13px] xl:text-[14px] font-semibold tracking-wide text-[#4a4d52] hover:text-[#1c1c1e] transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-magenta transition-all duration-300 group-hover:w-full" />
@@ -55,14 +55,21 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-2.5">
             <Button
               variant="outline"
               size="sm"
-              onClick={() => openQuoteModal()}
-              className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-4 sm:px-5 h-9 rounded-[10px] transition-all duration-300"
+              onClick={() => openQuoteModal("Order Request")}
+              className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300"
             >
-              Request Quote
+              Request to Order
+            </Button>
+            <Button
+              size="sm"
+              onClick={() => openQuoteModal("Free Sample Pack")}
+              className="bg-[#81014d] hover:bg-[#6b0140] text-white text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm"
+            >
+              Request Free Sample
             </Button>
           </div>
 
@@ -92,7 +99,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="flex flex-col items-center justify-center h-full gap-8"
+              className="flex flex-col items-center justify-center h-full gap-6 px-6"
               aria-label="Mobile navigation"
             >
               {NAV_LINKS.map((link, i) => (
@@ -115,11 +122,28 @@ export function Navbar() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
+                className="flex flex-col gap-3 w-full max-w-xs mt-2"
               >
-                <Button asChild size="lg">
-                  <Link href="#contact" onClick={() => setMobileOpen(false)}>
-                    Request Quote
-                  </Link>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    openQuoteModal("Order Request");
+                  }}
+                  className="w-full text-white border-white/20 bg-white/10 hover:bg-white/20 text-xs font-bold uppercase tracking-wider h-11 rounded-xl"
+                >
+                  Request to Order
+                </Button>
+                <Button
+                  size="lg"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    openQuoteModal("Free Sample Pack");
+                  }}
+                  className="w-full bg-[#a20160] hover:bg-[#880150] text-white text-xs font-bold uppercase tracking-wider h-11 rounded-xl shadow-lg shadow-[#a20160]/30"
+                >
+                  Request Free Sample
                 </Button>
               </motion.div>
             </motion.nav>

@@ -5,9 +5,9 @@ import { TrustedClients } from "@/components/sections/trusted-clients";
 import { Statistics } from "@/components/sections/statistics";
 import { WhyChoose } from "@/components/sections/why-choose";
 import { LabelsDivision } from "@/components/sections/labels-division";
+import { FlexoDigitalIntro } from "@/components/sections/flexo-digital-intro";
 import { PrinterSolutions } from "@/components/sections/printer-solutions";
 import { MaterialGuide } from "@/components/sections/material-guide";
-import { IndustriesServed } from "@/components/sections/industries-served";
 import { ManufacturingProcess } from "@/components/sections/manufacturing-process";
 import { FeaturedWork } from "@/components/sections/featured-work";
 import { Certifications } from "@/components/sections/certifications";
@@ -36,14 +36,14 @@ export default function GatewayPage() {
       {/* Core Business Vertical: Self-Adhesive Label Manufacturing */}
       <LabelsDivision />
 
+      {/* Flexo & Digital Printing Technology Introduction */}
+      <FlexoDigitalIntro />
+
       {/* Growth Vertical: Industrial Printer Solutions & Rentals */}
       <PrinterSolutions />
 
       {/* Substrates, Materials & Finishing Embellishments */}
       <MaterialGuide />
-
-      {/* Industries We Serve */}
-      <IndustriesServed />
 
       {/* 7-Step Production Pipeline & Manufacturing Excellence */}
       <ManufacturingProcess />

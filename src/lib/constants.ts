@@ -1,9 +1,9 @@
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Labels", href: "/labels" },
-  { label: "Printer Solutions", href: "/printer-rental" },
-  { label: "Industries", href: "/labels#industries" },
   { label: "About", href: "/labels#about" },
+  { label: "Labels", href: "/labels" },
+  { label: "Printer Solution", href: "/printer-rental" },
+  { label: "Catalog", href: "/labels#catalog" },
   { label: "Contact", href: "/labels#contact" },
 ] as const;
 
@@ -34,9 +34,9 @@ export const LABEL_CATEGORIES = [
     image: "/categories/pharma/03.png",
   },
   {
-    title: "Luxury Fragrance Box Labels",
-    description: "Embossed metallic foil labeling solutions for premium fragrance gift sets and boxes.",
-    image: "/categories/perfume/Gemini_Generated_Image_wsoo7ywsoo7ywsoo.png",
+    title: "Sachet Printing",
+    description: "Flexible high-barrier laminated sachet printing for pharmaceuticals, FMCG, samples, and liquids.",
+    image: "/categories/fmcg/Gemini_Generated_Image_owj0f1owj0f1owj0.png",
   },
   {
     title: "Food & Beverage Labels",
@@ -44,9 +44,9 @@ export const LABEL_CATEGORIES = [
     image: "/categories/fmcg/Gemini_Generated_Image_uwnx7luwnx7luwnx.png",
   },
   {
-    title: "Skincare & Beauty Labels",
-    description: "Sleek matte and glossy finishes resistant to oils, water, and daily handling.",
-    image: "/categories/cosmetic/Gemini_Generated_Image_fu5cscfu5cscfu5c.png",
+    title: "Liquor and Beverages",
+    description: "Premium metallic foil, neck wrap, and moisture-resistant neck & body labels for spirits, wine, and beverages.",
+    image: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_06_PM.png",
   },
   {
     title: "Industrial Barcode & Logistics",
@@ -505,9 +505,30 @@ export const COMPANY_ADDRESSES = {
   }
 } as const;
 
-export const COMPANY_CONTACT = {
-  phone: "+91 88660 09344",
-  email: "kunalartisan@gmail.com",
+export const GROUP_COMPANY = {
+  name: "Kalpa Digi World",
+  specialty: "Digital Printing",
+  description: "Group company specializing in high-speed digital label printing and commercial print solutions."
 } as const;
+
+export const COMPANY_CONTACT = {
+  kunal: {
+    name: "Kunal Shah",
+    email: "Kunal@artisanven.com",
+    phone: "+91 98257 44787",
+    rawPhone: "9825744787"
+  },
+  sales: {
+    name: "Sales Team",
+    email: "Sales@artisanven.com",
+    phone: "+91 93771 44222",
+    rawPhone: "9377144222"
+  },
+  phone1: "+91 98257 44787",
+  phone2: "+91 93771 44222",
+  email1: "Kunal@artisanven.com",
+  email2: "Sales@artisanven.com",
+} as const;
+
 
 

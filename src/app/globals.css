@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f8f6;
-  --background-secondary: #ffffff;
+  --background: #eaeae7;
+  --background-secondary: #f4f4f1;
   --foreground: #1c1c1e;
-  --foreground-secondary: #5f6368;
-  --border: #e6e6e6;
+  --foreground-secondary: #4a4d52;
+  --border: #d8d8d5;
   --dark: #111111;
-  --magenta: #a20160;
-  --golden: #fbdb04;
-  --cyan: #03acec;
-  --accent-magenta: #a20160;
-  --accent-blue: #0284c7;
-  --warm-gold: #d97706;
+  --magenta: #81014d;
+  --golden: #d4b802;
+  --cyan: #028abf;
+  --accent-magenta: #81014d;
+  --accent-blue: #026aa0;
+  --warm-gold: #ae5f05;
   --radius: 14px;
 }
 
@@ -89,10 +89,42 @@ body {
   background-size: 32px 32px;
 }
 
+/* Vibrant Text Gradients */
+.text-gradient-magenta {
+  background: linear-gradient(135deg, #81014d 0%, #b8005a 50%, #d90368 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #026aa0 0%, #0284c7 50%, #03acec 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ae5f05 0%, #d97706 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Colorful Card Shadows & Glows */
 .card-shadow {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
 }
 
 .card-shadow-hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+}
+
+.glow-magenta {
+  box-shadow: 0 10px 30px -5px rgba(129, 1, 77, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 10px 30px -5px rgba(2, 106, 160, 0.25);
+}
+
+.glow-gold {
+  box-shadow: 0 10px 30px -5px rgba(174, 95, 5, 0.25);
 }

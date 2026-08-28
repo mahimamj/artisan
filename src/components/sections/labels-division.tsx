@@ -17,9 +17,9 @@ const CATEGORY_TAGS: Record<string, string[]> = {
   "FMCG Packaging Labels": ["High-Speed Run", "Vibrant CMYK"],
   "Cosmetic Labels": ["Waterproof PP", "Oil-Resistant"],
   "Pharmaceutical Compliance": ["Security Track", "Zero Defect"],
-  "Luxury Fragrance Box Labels": ["Metallic Foil", "Custom Die-Cut"],
+  "Sachet Printing": ["High Barrier Foil", "Sample Pouches"],
   "Food & Beverage Labels": ["Food-Safe Inks", "Moisture Proof"],
-  "Skincare & Beauty Labels": ["No-Label Look", "Squeezable PE"],
+  "Liquor and Beverages": ["Metallic Foil", "Wash-Off Adhesive"],
   "Industrial Barcode & Logistics": ["Thermal Transfer", "High Adhesive"],
 };
 
@@ -29,7 +29,7 @@ export function LabelsDivision() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <section id="labels" className="section-padding bg-background border-t border-border/80 relative overflow-hidden">
+    <section id="catalog" className="section-padding bg-background border-t border-border/80 relative overflow-hidden">
       {/* Background Visual Accent Glow */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-magenta/5 blur-[140px] rounded-full pointer-events-none" />
 
@@ -41,41 +41,41 @@ export function LabelsDivision() {
           align="center"
         />
 
-        {/* CATEGORY SHOWCASE GRID */}
-        <div className="mt-10 sm:mt-12">
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {/* CATEGORY SHOWCASE GRID — EXPANDED CARDS */}
+        <div className="mt-10 sm:mt-14">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             {LABEL_CATEGORIES.map((category) => {
               const tags = CATEGORY_TAGS[category.title] || ["Enterprise Grade", "Custom Die-Cut"];
               return (
                 <StaggerItem key={category.title}>
                   <div
                     onClick={() => openQuoteModal(category.title)}
-                    className="group h-full p-6 sm:p-7 rounded-[24px] bg-white border border-border/90 hover:border-magenta/60 card-shadow hover:card-shadow-hover transition-all duration-400 flex flex-col justify-between hover:-translate-y-1.5 cursor-pointer relative overflow-hidden"
+                    className="group h-full p-7 sm:p-8 md:p-9 rounded-[28px] bg-white border border-border/90 hover:border-magenta/60 card-shadow hover:card-shadow-hover transition-all duration-400 flex flex-col justify-between hover:-translate-y-2 cursor-pointer relative overflow-hidden"
                   >
                     {/* Glowing Accent Top Line */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-magenta to-[#0284c7] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-magenta via-[#0284c7] to-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div>
-                      {/* Image Container with Zoom */}
-                      <div className="relative w-full h-52 sm:h-60 rounded-[18px] overflow-hidden mb-5 border border-border/60 bg-[#f8f8f6]">
+                      {/* Image Container — Substantially Increased Height & Quality Aspect */}
+                      <div className="relative w-full h-64 sm:h-76 md:h-84 lg:h-96 rounded-[22px] overflow-hidden mb-6 border border-border/60 bg-[#f4f4f1]">
                         <Image
                           src={category.image}
                           alt={category.title}
                           fill
-                          className="object-cover group-hover:scale-106 transition-transform duration-600 ease-out"
+                          className="object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         {/* Overlay Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-30 group-hover:opacity-15 transition-opacity duration-300" />
                         
-                        {/* Top Left Floating Tag */}
-                        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
+                        {/* Top Left Floating Tags */}
+                        <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-2 z-10">
                           {tags.map((t) => (
                             <span
                               key={t}
-                              className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 text-foreground backdrop-blur-md border border-white/40 shadow-xs flex items-center gap-1"
+                              className="px-3 py-1.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-white/95 text-foreground backdrop-blur-md border border-white/50 shadow-sm flex items-center gap-1.5"
                             >
-                              <Sparkles size={10} className="text-magenta" />
+                              <Sparkles size={11} className="text-magenta" />
                               {t}
                             </span>
                           ))}
@@ -83,23 +83,23 @@ export function LabelsDivision() {
                       </div>
 
                       {/* Header Title */}
-                      <h3 className="text-xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300 leading-snug">
+                      <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground group-hover:text-magenta transition-colors duration-300 leading-tight">
                         {category.title}
                       </h3>
 
-                      <p className="mt-2.5 text-xs sm:text-sm text-foreground-secondary leading-relaxed">
+                      <p className="mt-3 text-sm sm:text-base text-foreground-secondary leading-relaxed">
                         {category.description}
                       </p>
                     </div>
 
                     {/* Bottom CTA Bar */}
-                    <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-magenta group-hover:text-magenta transition-colors">
-                      <span className="flex items-center gap-1.5">
-                        <ShieldCheck size={14} className="text-magenta/80" />
-                        CUSTOM QUOTATION AVAILABLE ↗
+                    <div className="mt-7 pt-5 border-t border-border/60 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-magenta group-hover:text-magenta transition-colors">
+                      <span className="flex items-center gap-2">
+                        <ShieldCheck size={16} className="text-magenta" />
+                        GET CUSTOM QUOTATION ↗
                       </span>
-                      <div className="h-8 w-8 rounded-full bg-magenta/10 flex items-center justify-center group-hover:bg-magenta group-hover:text-white transition-all duration-300">
-                        <ArrowUpRight size={16} />
+                      <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-magenta/10 flex items-center justify-center group-hover:bg-magenta group-hover:text-white transition-all duration-300 group-hover:scale-105">
+                        <ArrowUpRight size={18} />
                       </div>
                     </div>
                   </div>

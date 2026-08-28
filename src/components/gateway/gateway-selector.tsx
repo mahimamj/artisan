@@ -45,116 +45,141 @@ export function GatewaySelector() {
         </motion.p>
       </div>
 
-      {/* Two Business Cards Panel */}
+      {/* Business Cards Panel — 70% Labels / 30% Printer Proportion */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
         className="mx-auto max-w-6xl w-full flex flex-col md:flex-row gap-5 sm:gap-6 lg:gap-8 items-stretch"
       >
-        {/* CARD 01 — LABEL MANUFACTURING */}
+        {/* CARD 01 — LABEL MANUFACTURING (70% AREA) */}
         <Link
           href="/labels"
-          className="flex-1 transition-all duration-500 ease-out focus:outline-none group md:flex-1"
+          className="w-full md:w-[68%] md:flex-[7] transition-all duration-500 ease-out focus:outline-none group"
           onMouseEnter={() => setHoveredCard("labels")}
           onMouseLeave={() => setHoveredCard(null)}
         >
           <div
-            className={`h-full min-h-[260px] sm:min-h-[320px] lg:min-h-[380px] p-6 sm:p-8 lg:p-10 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
+            className={`h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] p-6 sm:p-8 lg:p-10 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
               hoveredCard === "labels"
-                ? "border-[#a20160]/60 bg-gradient-to-br from-[#a20160]/[0.04] via-white to-white shadow-2xl shadow-[#a20160]/15"
-                : "border-[#e6e6e6] bg-white hover:border-[#a20160]/40 card-shadow-hover"
+                ? "border-[#81014d]/60 bg-gradient-to-br from-[#81014d]/[0.06] via-white to-[#f4f4f1] shadow-2xl shadow-[#81014d]/20"
+                : "border-[#d8d8d5] bg-white hover:border-[#81014d]/50 card-shadow-hover"
             }`}
           >
+            {/* Light Background Picture with Soft Blend */}
+            <div
+              className="absolute inset-0 bg-cover bg-right-center opacity-[0.14] group-hover:opacity-[0.22] transition-opacity duration-700 pointer-events-none mix-blend-multiply"
+              style={{ backgroundImage: "url('/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_16_PM.png')" }}
+            />
+
             {/* Soft Magenta Radial Ambient Glow */}
             <div
-              className={`absolute top-0 right-0 w-72 h-72 rounded-full blur-[90px] transition-opacity duration-700 pointer-events-none ${
-                hoveredCard === "labels" ? "opacity-40" : "opacity-0"
+              className={`absolute top-0 right-0 w-80 h-80 rounded-full blur-[90px] transition-opacity duration-700 pointer-events-none ${
+                hoveredCard === "labels" ? "opacity-50" : "opacity-0"
               }`}
-              style={{ background: "radial-gradient(circle, rgba(162,1,96,0.15) 0%, transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(129,1,77,0.2) 0%, transparent 70%)" }}
             />
 
             {/* Top Bar */}
             <div className="flex items-center justify-between relative z-10">
-              <span className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-light text-[#1c1c1e]/20 group-hover:text-[#a20160] transition-colors duration-500">
+              <span className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-light text-[#1c1c1e]/20 group-hover:text-[#81014d] transition-colors duration-500">
                 01
               </span>
-              <span className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] bg-[#a20160]/10 text-[#a20160] border border-[#a20160]/20">
-                CORE BUSINESS
+              <span className="px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] bg-[#81014d]/10 text-[#81014d] border border-[#81014d]/30 backdrop-blur-sm">
+                70% CORE VERTICAL — MANUFACTURING
               </span>
             </div>
 
             {/* Content Area */}
-            <div className="my-5 sm:my-8 relative z-10">
-              <h2 className="font-serif-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#a20160] transition-colors duration-300">
+            <div className="my-6 sm:my-10 relative z-10">
+              <h2 className="font-serif-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#81014d] transition-colors duration-300">
                 Label Manufacturing
               </h2>
-              <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-[#5f6368] leading-relaxed max-w-lg">
-                Premium self-adhesive labels engineered for FMCG, cosmetics, pharma, food and industrial brands.
+              <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[#4a4d52] leading-relaxed max-w-xl">
+                High-precision flexographic and digital rotary die-cut self-adhesive labels engineered for FMCG, luxury perfume, pharmaceuticals, cosmetics, and enterprise packaging.
               </p>
             </div>
 
             {/* Bottom CTA Link */}
-            <div className="relative z-10 flex items-center gap-3 text-xs sm:text-sm lg:text-base font-semibold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#a20160] transition-colors duration-300">
-              <span>Explore Labels</span>
-              <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#a20160] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+            <div className="relative z-10 flex items-center gap-3 text-xs sm:text-sm lg:text-base font-semibold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#81014d] transition-colors duration-300">
+              <span>Explore Label Division</span>
+              <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#81014d] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
                 <ArrowRight size={16} />
               </div>
             </div>
           </div>
         </Link>
 
-        {/* CARD 02 — PRINTER RENTAL */}
+        {/* CARD 02 — PRINTER RENTAL (30% AREA) */}
         <Link
           href="/printer-rental"
-          className="flex-1 transition-all duration-500 ease-out focus:outline-none group md:flex-1"
+          className="w-full md:w-[32%] md:flex-[3] transition-all duration-500 ease-out focus:outline-none group"
           onMouseEnter={() => setHoveredCard("printers")}
           onMouseLeave={() => setHoveredCard(null)}
         >
           <div
-            className={`h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] p-6 sm:p-8 lg:p-10 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
+            className={`h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] p-6 sm:p-8 rounded-[20px] sm:rounded-[24px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border card-shadow ${
               hoveredCard === "printers"
-                ? "border-[#0284c7]/60 bg-gradient-to-br from-[#0284c7]/[0.04] via-white to-white shadow-2xl shadow-[#0284c7]/15"
-                : "border-[#e6e6e6] bg-white hover:border-[#0284c7]/40 card-shadow-hover"
+                ? "border-[#026aa0]/60 bg-gradient-to-br from-[#026aa0]/[0.06] via-white to-[#f4f4f1] shadow-2xl shadow-[#026aa0]/20"
+                : "border-[#d8d8d5] bg-white hover:border-[#026aa0]/50 card-shadow-hover"
             }`}
           >
+            {/* Light Background Picture with Soft Blend */}
+            <div
+              className="absolute inset-0 bg-contain bg-right-bottom bg-no-repeat opacity-[0.16] group-hover:opacity-[0.25] transition-opacity duration-700 pointer-events-none mix-blend-multiply"
+              style={{ backgroundImage: "url('/printers/canon-ir-c3326.png')" }}
+            />
+
             {/* Soft Blue Radial Ambient Glow */}
             <div
               className={`absolute top-0 right-0 w-72 h-72 rounded-full blur-[90px] transition-opacity duration-700 pointer-events-none ${
-                hoveredCard === "printers" ? "opacity-40" : "opacity-0"
+                hoveredCard === "printers" ? "opacity-50" : "opacity-0"
               }`}
-              style={{ background: "radial-gradient(circle, rgba(2,132,199,0.15) 0%, transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(2,106,160,0.2) 0%, transparent 70%)" }}
             />
 
             {/* Top Bar */}
             <div className="flex items-center justify-between relative z-10">
-              <span className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-light text-[#1c1c1e]/20 group-hover:text-[#0284c7] transition-colors duration-500">
+              <span className="font-serif-heading text-3xl sm:text-4xl font-light text-[#1c1c1e]/20 group-hover:text-[#026aa0] transition-colors duration-500">
                 02
               </span>
-              <span className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] bg-[#0284c7]/10 text-[#0284c7] border border-[#0284c7]/20">
-                GROWTH VERTICAL
+              <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] bg-[#026aa0]/10 text-[#026aa0] border border-[#026aa0]/30 backdrop-blur-sm">
+                30% RENTAL
               </span>
             </div>
 
             {/* Content Area */}
             <div className="my-5 sm:my-8 relative z-10">
-              <h2 className="font-serif-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#0284c7] transition-colors duration-300">
+              <h2 className="font-serif-heading text-2xl sm:text-3xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#026aa0] transition-colors duration-300">
                 Printer Rental
               </h2>
-              <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-[#5f6368] leading-relaxed max-w-lg">
-                A4 and A3 colour and monochrome printer solutions with installation, maintenance and service support.
+              <p className="mt-2.5 text-xs sm:text-sm text-[#4a4d52] leading-relaxed">
+                Enterprise A4/A3 MFP color and monochrome printer rental fleets with free service & maintenance.
               </p>
             </div>
 
             {/* Bottom CTA Link */}
-            <div className="relative z-10 flex items-center gap-3 text-xs sm:text-sm lg:text-base font-semibold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#0284c7] transition-colors duration-300">
-              <span>Explore Printer Rental</span>
-              <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#0284c7] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
-                <ArrowRight size={16} />
+            <div className="relative z-10 flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#026aa0] transition-colors duration-300">
+              <span>Printer Rental</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#026aa0] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+                <ArrowRight size={15} />
               </div>
             </div>
           </div>
         </Link>
+      </motion.div>
+
+      {/* Subtle Group Company Note */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="mt-8 sm:mt-10 text-center"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#dfdfdc] border border-[#d0d0cd] text-xs text-[#4a4d52]">
+          <span className="font-medium">Group Company for Digital Printing:</span>
+          <span className="font-bold text-[#1c1c1e]">Kalpa Digi World</span>
+        </div>
       </motion.div>
     </section>
   );

@@ -218,7 +218,7 @@ export default function PrinterRentalPage() {
                   {/* WhatsApp Direct Action Button */}
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
                     <a
-                      href={`https://wa.me/918866009344?text=${whatsappMessage}`}
+                      href={`https://wa.me/919825744787?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-600 text-white hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 shadow-md shadow-emerald-600/25"

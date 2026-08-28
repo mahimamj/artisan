@@ -4,10 +4,13 @@ import { useState } from "react";
 import { Check, Sparkles, Layers, ShieldCheck, Box, Droplets, Sun, Flame, ShieldAlert } from "lucide-react";
 import { FadeIn, SectionHeader, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 
+import Image from "next/image";
+
 const MATERIAL_RANGE = [
   {
     name: "Chromo Paper",
     tag: "Economical & Versatile",
+    image: "/categories/fmcg/Gemini_Generated_Image_hisj06hisj06hisj.png",
     description: "High-gloss paper stock ideal for fast-moving consumer goods and dry product packaging.",
     bestFor: "Food packaging, retail cartons, dry-use items, barcodes & price tags.",
     properties: ["High Print Clarity", "Cost Effective", "Smooth Gloss Finish"],
@@ -16,6 +19,7 @@ const MATERIAL_RANGE = [
   {
     name: "White PP (Polypropylene)",
     tag: "Waterproof & Durable",
+    image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
     description: "Tear-resistant film built to withstand moisture, oils, and harsh handling.",
     bestFor: "Cosmetics, shampoos, pharmaceuticals, beverage bottles.",
     properties: ["Water & Oil Proof", "Squeezable & Flexible", "Gloss / Matte Lamination"],
@@ -27,6 +31,7 @@ const MATERIAL_RANGE = [
   {
     name: "White PE (Polyethylene)",
     tag: "Ultra Flexible & Squeezable",
+    image: "/categories/cosmetic/Gemini_Generated_Image_fu5cscfu5cscfu5c.png",
     description: "Highly flexible film that conforms perfectly to curved, squeezable containers without wrinkling.",
     bestFor: "Squeeze bottles, detergents, liquid soap, personal care products.",
     properties: ["No-Crease Flexibility", "Chemical Resistance", "Strong Adhesive Bond"],
@@ -38,6 +43,7 @@ const MATERIAL_RANGE = [
   {
     name: "Silver PP / PE",
     tag: "Premium Metallic Finish",
+    image: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_16_PM.png",
     description: "Reflective metallic substrates that give labels a high-end luxury foil look.",
     bestFor: "Nutraceuticals, premium cosmetics, engine oils, luxury items.",
     properties: ["Mirror Metallic Effect", "High Shelf Appeal", "Custom Tinting Capable"],
@@ -49,6 +55,7 @@ const MATERIAL_RANGE = [
   {
     name: "Transparent PP / PE",
     tag: "No-Label Look",
+    image: "/categories/pharma/Gemini_Generated_Image_9owg3w9owg3w9owg.png",
     description: "Crystal-clear film that blends seamlessly into transparent containers.",
     bestFor: "Glass bottles, clear PET jars, cosmetic lotions, premium drinks.",
     properties: ["Seamless Transparency", "UV Resistant", "Waterproof Performance"],
@@ -60,6 +67,7 @@ const MATERIAL_RANGE = [
   {
     name: "Clear-on-Clear Labels",
     tag: "Ultra-Premium Glass Finish",
+    image: "/categories/perfume/Gemini_Generated_Image_wsoo7ywsoo7ywsoo.png",
     description: "Highest clarity liner and facestock for invisible label edge illusion.",
     bestFor: "High-end skincare, perfumes, luxury glass bottle packaging.",
     properties: ["Zero Haze Clarity", "Luxury Packaging Standard", "Precision Die-Cutting"],
@@ -148,6 +156,18 @@ export function MaterialGuide() {
               <StaggerItem key={mat.name}>
                 <div className="group h-full flex flex-col justify-between p-6 sm:p-7 rounded-[24px] bg-white border border-border/80 hover:border-magenta/40 card-shadow hover:card-shadow-hover transition-all duration-400 hover:-translate-y-1 relative overflow-hidden">
                   <div>
+                    {/* Material Background Image Preview Container */}
+                    <div className="relative w-full h-44 rounded-[16px] overflow-hidden mb-5 border border-border/60 bg-[#f4f4f1]">
+                      <Image
+                        src={mat.image}
+                        alt={mat.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+                    </div>
+
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-magenta/10 text-magenta border border-magenta/20">
                         {mat.tag}

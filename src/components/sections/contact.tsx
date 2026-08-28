@@ -38,7 +38,7 @@ export function Contact() {
                 <div className="flex items-center justify-between gap-3 mb-6">
                   <h3 className="text-2xl font-bold tracking-tight text-foreground">Contact & Facility Details</h3>
                   <a
-                    href="https://wa.me/918866009344?text=Hello%20Artisan%20Ventures,%20I%20would%20like%20to%20request%20a%20quote."
+                    href="https://wa.me/919825744787?text=Hello%20Artisan%20Ventures,%20I%20would%20like%20to%20request%20a%20quote."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white transition-all duration-300 flex items-center gap-1.5 shadow-xs"
@@ -66,13 +66,13 @@ export function Contact() {
                     },
                     {
                       icon: Mail,
-                      label: "Direct Email",
-                      value: "kunalartisan@gmail.com",
+                      label: "Direct Email Contacts",
+                      value: "Kunal@artisanven.com\nSales@artisanven.com",
                     },
                     {
                       icon: Phone,
                       label: "Hotline & Inquiries",
-                      value: "+91 88660 09344",
+                      value: "+91 98257 44787 (Kunal Shah)\n+91 93771 44222 (Sales)",
                     },
                     {
                       icon: Clock,

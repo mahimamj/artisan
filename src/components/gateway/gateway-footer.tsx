@@ -16,12 +16,12 @@ export function GatewayFooter() {
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <img
-            src="/artisan-logo-transparent.png"
+            src="/artisan-logo.png"
             alt="Artisan Ventures Logo"
-            className="h-8 w-auto object-contain opacity-95"
+            className="h-10 w-auto object-contain opacity-95"
           />
           <span className="hidden sm:inline text-foreground/20">|</span>
-          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited. | Ahmedabad, Gujarat | ISO 9001:2015 Certified</p>
+          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited & Group Company <strong className="text-magenta">Kalpa Digi World</strong> (Digital Printing) | Kunal@artisanven.com (+91 98257 44787) | Sales@artisanven.com (+91 93771 44222)</p>
         </div>
 
         <div className="flex items-center gap-6 text-xs uppercase tracking-wider font-bold text-foreground-secondary">

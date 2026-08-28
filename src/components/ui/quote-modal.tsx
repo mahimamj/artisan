@@ -29,7 +29,9 @@ const CATEGORY_OPTIONS = [
   "FMCG Packaging Labels",
   "Cosmetic Labels",
   "Pharmaceutical Compliance",
-  "Luxury Fragrance Box Labels",
+  "Sachet Printing",
+  "Liquor and Beverages",
+  "Food & Beverage Labels",
   "Other",
 ];
 
@@ -172,7 +174,7 @@ export function QuoteModal({ isOpen, initialCategory, onClose }: QuoteModalProps
     if (!validateForm()) return;
 
     const businessPhone = (
-      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+918866009344"
+      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+919825744787"
     ).replace(/[^\d]/g, "");
 
     const formattedMessage = `Hello, I would like to request a quotation for custom labels.
