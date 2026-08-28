@@ -22,7 +22,7 @@ export function GatewayNavbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#eaeae7]/95 backdrop-blur-md border-b border-[#d8d8d5] transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#dededb]/95 backdrop-blur-md border-b border-[#cccccc] transition-all duration-300">
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-12 py-3.5 sm:py-4 flex items-center justify-between">
         {/* Left: Official Logo */}
         <Link href="/" className="flex items-center group py-1">

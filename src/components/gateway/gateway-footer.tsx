@@ -9,7 +9,7 @@ export function GatewayFooter() {
   };
 
   return (
-    <footer className="relative z-10 border-t border-border bg-[#f8f8f6] py-10 px-6 lg:px-12 text-foreground-secondary text-xs md:text-sm">
+    <footer className="relative z-10 border-t border-border bg-background py-10 px-6 lg:px-12 text-foreground-secondary text-xs md:text-sm">
       {/* Top Gradient Line */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-magenta via-[#0284c7] to-magenta" />
 
