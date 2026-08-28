@@ -8,6 +8,7 @@ import { LabelsDivision } from "@/components/sections/labels-division";
 import { FlexoDigitalIntro } from "@/components/sections/flexo-digital-intro";
 import { PrinterSolutions } from "@/components/sections/printer-solutions";
 import { MaterialGuide } from "@/components/sections/material-guide";
+import { MaterialIndustriesShowcase } from "@/components/sections/material-industries-showcase";
 import { ManufacturingProcess } from "@/components/sections/manufacturing-process";
 import { FeaturedWork } from "@/components/sections/featured-work";
 import { Certifications } from "@/components/sections/certifications";
@@ -44,6 +45,9 @@ export default function GatewayPage() {
 
       {/* Substrates, Materials & Finishing Embellishments */}
       <MaterialGuide />
+
+      {/* Material in Square Blocks & Industries in Zig-Zag Formation */}
+      <MaterialIndustriesShowcase />
 
       {/* 7-Step Production Pipeline & Manufacturing Excellence */}
       <ManufacturingProcess />
