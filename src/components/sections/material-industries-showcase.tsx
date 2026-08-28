@@ -55,8 +55,8 @@ export function MaterialIndustriesShowcase() {
         {/* MATERIAL IN SQUARE BLOCKS */}
         <SectionHeader
           label="Label Substrates & Materials"
-          title="Engineered Material Range in Square Blocks"
-          description="Select from our range of high-performance paper, film, metallic, and clear substrates."
+          title="High-Performance Label Substrate Portfolio"
+          description="Select from our high-precision paper, waterproof film, luxury metallic, and crystal-clear glass finish substrates engineered for enterprise packaging."
           align="center"
         />
 
