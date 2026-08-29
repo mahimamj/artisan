@@ -147,11 +147,10 @@ export function GatewaySelector() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div
-              className={`h-full min-h-[320px] sm:min-h-[380px] lg:min-h-[400px] p-6 sm:p-10 rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${
-                hoveredCard === "labels"
+              className={`h-full min-h-[320px] sm:min-h-[380px] lg:min-h-[400px] p-6 sm:p-10 rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${hoveredCard === "labels"
                   ? "border-[#81014d]/60 bg-gradient-to-br from-[#81014d]/[0.08] via-white to-[#f8f8f6] shadow-2xl shadow-[#81014d]/25"
                   : "border-[#d8d8d5] bg-gradient-to-br from-[#fcfcfb] via-white to-[#f4f4f1] shadow-xl hover:shadow-2xl"
-              }`}
+                }`}
             >
               {/* Background Machine Picture Overlay */}
               <div
@@ -205,11 +204,10 @@ export function GatewaySelector() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div
-              className={`h-full min-h-[320px] sm:min-h-[380px] lg:min-h-[400px] p-6 sm:p-10 rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${
-                hoveredCard === "printers"
+              className={`h-full min-h-[320px] sm:min-h-[380px] lg:min-h-[400px] p-6 sm:p-10 rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${hoveredCard === "printers"
                   ? "border-[#81014d]/60 bg-gradient-to-br from-[#81014d]/[0.08] via-white to-[#f8f8f6] shadow-2xl shadow-[#81014d]/25"
                   : "border-[#d8d8d5] bg-gradient-to-br from-[#fdfbfd] via-white to-[#f7f4f7] shadow-xl hover:shadow-2xl"
-              }`}
+                }`}
             >
               {/* Background MFP Printer Picture Overlay */}
               <div

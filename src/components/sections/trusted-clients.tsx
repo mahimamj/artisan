@@ -77,18 +77,18 @@ export function TrustedClients() {
           {MARQUEE_CLIENTS.map((client, idx) => (
             <div
               key={`${client.name}-${idx}`}
-              className="group flex-shrink-0 relative flex flex-col items-center justify-between p-4 sm:p-5 rounded-2xl bg-white border border-border/80 hover:border-magenta/50 card-shadow hover:card-shadow-hover transition-all duration-300 transform hover:-translate-y-1 w-40 sm:w-48 md:w-56 h-28 sm:h-32 md:h-36 cursor-pointer"
+              className="group flex-shrink-0 relative flex flex-col items-center justify-between p-4 sm:p-5 rounded-2xl bg-white border border-border/80 hover:border-magenta/50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-44 sm:w-52 md:w-60 h-30 sm:h-34 md:h-38 cursor-pointer"
             >
-              <div className="flex-1 w-full flex items-center justify-center p-1.5">
+              <div className="flex-1 w-full flex items-center justify-center p-2">
                 <img
                   src={client.logo}
                   alt={`${client.name} Logo`}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-12 sm:max-h-14 md:max-h-16 max-w-full object-contain filter group-hover:scale-105 transition-transform duration-300"
+                  className="max-h-14 sm:max-h-16 md:max-h-20 max-w-[88%] object-contain filter group-hover:scale-108 transition-transform duration-300"
                 />
               </div>
-              <div className="w-full text-center pt-1.5 border-t border-border/40">
+              <div className="w-full text-center pt-2 border-t border-border/30">
                 <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-foreground-secondary uppercase block truncate">
                   {client.name}
                 </span>
