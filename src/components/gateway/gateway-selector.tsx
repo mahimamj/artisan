@@ -87,10 +87,10 @@ export function GatewaySelector() {
             </p>
 
             {/* Action Buttons */}
-            <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <button
                 onClick={() => openQuoteModal("Free Sample Pack")}
-                className="px-6 py-3.5 rounded-xl bg-[#81014d] hover:bg-[#a20160] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-xl shadow-[#81014d]/40 flex items-center gap-2 transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#81014d] hover:bg-[#a20160] active:scale-[0.98] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-xl shadow-[#81014d]/40 flex items-center justify-center gap-2 transform sm:hover:-translate-y-0.5"
               >
                 <ShoppingBag size={16} />
                 <span>REQUEST FREE SAMPLE</span>
@@ -98,7 +98,7 @@ export function GatewaySelector() {
 
               <button
                 onClick={() => openQuoteModal("Order Request")}
-                className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:scale-[0.98] text-white border border-white/25 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2 transform sm:hover:-translate-y-0.5"
               >
                 <ShoppingCart size={16} />
                 <span>REQUEST TO ORDER</span>
@@ -324,12 +324,12 @@ export function GatewaySelector() {
             </div>
           </div>
 
-          {/* 4 Feature Columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 divide-y sm:divide-y-0 lg:divide-x divide-white/10">
+          {/* 4 Feature Columns (2x2 Grid on Mobile, 4 Columns on Desktop) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:divide-x lg:divide-white/10">
             {/* Feature 1 */}
-            <div className="text-center pt-6 sm:pt-0 lg:px-4 space-y-3 group">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
-                <Target size={24} />
+            <div className="text-center lg:px-4 space-y-2.5 sm:space-y-3 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
+                <Target size={22} />
               </div>
               <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
                 PRECISE PRINTING
@@ -340,40 +340,40 @@ export function GatewaySelector() {
             </div>
 
             {/* Feature 2 */}
-            <div className="text-center pt-6 sm:pt-0 lg:px-4 space-y-3 group">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
-                <Award size={24} />
+            <div className="text-center lg:px-4 space-y-2.5 sm:space-y-3 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
+                <Award size={22} />
               </div>
-              <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+              <h4 className="text-[11px] sm:text-sm font-bold uppercase tracking-wider text-white">
                 PREMIUM QUALITY
               </h4>
-              <p className="text-xs text-white/70">
+              <p className="text-[10px] sm:text-xs text-white/70">
                 Materials that define excellence.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="text-center pt-6 sm:pt-0 lg:px-4 space-y-3 group">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
-                <Settings size={24} />
+            <div className="text-center lg:px-4 space-y-2.5 sm:space-y-3 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
+                <Settings size={22} />
               </div>
-              <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+              <h4 className="text-[11px] sm:text-sm font-bold uppercase tracking-wider text-white">
                 RELIABLE PERFORMANCE
               </h4>
-              <p className="text-xs text-white/70">
+              <p className="text-[10px] sm:text-xs text-white/70">
                 Consistent results for your business.
               </p>
             </div>
 
             {/* Feature 4 */}
-            <div className="text-center pt-6 sm:pt-0 lg:px-4 space-y-3 group">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
-                <Headphones size={24} />
+            <div className="text-center lg:px-4 space-y-2.5 sm:space-y-3 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 text-[#f59e0b] flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#f59e0b] group-hover:text-black transition-all duration-300">
+                <Headphones size={22} />
               </div>
-              <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+              <h4 className="text-[11px] sm:text-sm font-bold uppercase tracking-wider text-white">
                 DEDICATED SUPPORT
               </h4>
-              <p className="text-xs text-white/70">
+              <p className="text-[10px] sm:text-xs text-white/70">
                 Always here to help you grow.
               </p>
             </div>
