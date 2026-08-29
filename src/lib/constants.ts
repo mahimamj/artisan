@@ -14,29 +14,24 @@ export const LABEL_CATEGORIES = [
     image: "/categories/pharma/Gemini_Generated_Image_9owg3w9owg3w9owg.png",
   },
   {
-    title: "Perfume Labels",
-    description: "Elegant, high-finish tactile labels designed for luxury perfume and fragrance bottles.",
-    image: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_16_PM.png",
-  },
-  {
     title: "FMCG Packaging Labels",
     description: "High-volume vibrant product labels built for consumer goods and retail packaging.",
     image: "/categories/fmcg/Gemini_Generated_Image_hisj06hisj06hisj.png",
   },
   {
-    title: "Cosmetic Labels",
-    description: "Premium foil-stamped, water-resistant labels tailored for cosmetics and beauty products.",
+    title: "Cosmetics & Personal Care Labels",
+    description: "Premium foil-stamped, water-resistant labels tailored for cosmetics, skincare, and personal care products.",
     image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
   },
   {
-    title: "Pharmaceutical Compliance",
-    description: "Regulated medical dosage and security labels meeting international FDA/EU standards.",
+    title: "Nutraceutical Labels",
+    description: "Custom labels engineered for dietary supplements, vitamins, wellness products, and health supplements.",
     image: "/categories/pharma/03.png",
   },
   {
     title: "Sachet Printing",
     description: "Flexible high-barrier laminated sachet printing for pharmaceuticals, FMCG, samples, and liquids.",
-    image: "/categories/fmcg/Gemini_Generated_Image_owj0f1owj0f1owj0.png",
+    image: "/categories/fmcg/sachet-packaging.jpg",
   },
   {
     title: "Food & Beverage Labels",
@@ -47,11 +42,6 @@ export const LABEL_CATEGORIES = [
     title: "Liquor and Beverages",
     description: "Premium metallic foil, neck wrap, and moisture-resistant neck & body labels for spirits, wine, and beverages.",
     image: "/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_06_PM.png",
-  },
-  {
-    title: "Industrial Barcode & Logistics",
-    description: "High-contrast thermal transfer and barcode labels for inventory tracking and shipping.",
-    image: "/categories/fmcg/Gemini_Generated_Image_8pacx8pacx8pacx8.png",
   },
 ] as const;
 
@@ -68,32 +58,39 @@ export const INDUSTRIES = [
 
 export const MANUFACTURING_STEPS = [
   {
-    title: "Substrate Audit",
-    description: "Analyzing container shape, moisture levels, and adhesive bonding requirements.",
+    stage: "01",
+    title: "Artwork & Pre-Press",
+    description: "Precision Before Production",
   },
   {
-    title: "Digital Pre-Press",
-    description: "Color calibration, proofing, and variable data layout preparation.",
+    stage: "02",
+    title: "Material Selection",
+    description: "The Right Substrate & Adhesive",
   },
   {
-    title: "Flexo & Digital Print",
-    description: "High-speed UV flexo and digital printing up to 1200 DPI resolution.",
+    stage: "03",
+    title: "Flexo & Digital Printing",
+    description: "Precision Printing Technology",
   },
   {
-    title: "Foil & Spot UV",
-    description: "Applying metallic foil stamping, drip-off texture, and selective varnish.",
+    stage: "04",
+    title: "In-Process QC Check",
+    description: "Quality Control at Every Stage",
   },
   {
-    title: "Precision Die-Cut",
-    description: "Rotary die-cutting, micro-perforations, and matrix waste stripping.",
+    stage: "05",
+    title: "Die-Cutting & Converting",
+    description: "Accurate Die-Cutting & Conversion",
   },
   {
-    title: "Optical Quality Scan",
-    description: "100% automated camera inspection checking every label for defects.",
+    stage: "06",
+    title: "Final Quality Inspection",
+    description: "Multi-Point Quality Control",
   },
   {
-    title: "Roll Rewind & Ship",
-    description: "Custom core roll winding, vacuum shrink wrapping, and fast dispatch.",
+    stage: "07",
+    title: "Packing & Dispatch",
+    description: "Secure Packing & On-Time Delivery",
   },
 ] as const;
 
@@ -489,7 +486,7 @@ export const CERTIFICATIONS = [
 ] as const;
 
 export const FOOTER_LINKS = {
-  products: ["Pharma Labels", "Perfume Labels", "FMCG Labels", "Cosmetic Labels", "Industrial Printers"],
+  products: ["Pharma Labels", "FMCG Labels", "Cosmetics & Personal Care Labels", "Liquor & Beverage Labels", "Industrial Printers"],
   industries: ["Pharma", "Perfume", "FMCG", "Cosmetics", "Healthcare"],
   company: ["About Us", "Careers", "Certifications", "Contact"],
 } as const;
@@ -519,7 +516,7 @@ export const COMPANY_CONTACT = {
     rawPhone: "9825744787"
   },
   sales: {
-    name: "Sales Team",
+    name: "Dhruv Patel",
     email: "Sales@artisanven.com",
     phone: "+91 93771 44222",
     rawPhone: "9377144222"

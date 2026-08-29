@@ -25,10 +25,9 @@ interface QuoteModalProps {
 
 const CATEGORY_OPTIONS = [
   "Pharma Labels",
-  "Perfume Labels",
   "FMCG Packaging Labels",
-  "Cosmetic Labels",
-  "Pharmaceutical Compliance",
+  "Cosmetics & Personal Care Labels",
+  "Nutraceutical Labels",
   "Sachet Printing",
   "Liquor and Beverages",
   "Food & Beverage Labels",

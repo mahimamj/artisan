@@ -61,8 +61,9 @@ export function Contact() {
                     },
                     {
                       icon: MapPin,
-                      label: "Registered Corporate Office",
-                      value: "44, Panchshil Bunglow, Opp Metro Pillar - 288,\nNear Naranpura Railway Crossing, Usmanpura,\nAhmedabad, Gujarat - 380013",
+                      label: "Registered Corporate Office (Google Maps)",
+                      value: "44, Somnath Rd, Shanti Nagar, Usmanpura,\nAhmedabad, Gujarat - 380013",
+                      link: "https://maps.app.goo.gl/orDcQ8RjCBukQ4gX8?g_st=aw",
                     },
                     {
                       icon: Mail,
@@ -72,7 +73,7 @@ export function Contact() {
                     {
                       icon: Phone,
                       label: "Hotline & Inquiries",
-                      value: "+91 98257 44787 (Kunal Patel)\n+91 93771 44222 (Sales)",
+                      value: "+91 98257 44787 (Kunal Patel)\n+91 93771 44222 (Dhruv Patel)",
                     },
                     {
                       icon: Clock,
@@ -84,9 +85,21 @@ export function Contact() {
                       <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[14px] bg-magenta/10 border border-magenta/20 group-hover:scale-105 transition-transform duration-300">
                         <item.icon size={20} strokeWidth={1.75} className="text-magenta" />
                       </div>
-                      <div>
-                        <div className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-foreground-secondary/70">
-                          {item.label}
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-foreground-secondary/70">
+                            {item.label}
+                          </span>
+                          {"link" in item && (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[10px] font-bold text-magenta hover:underline uppercase tracking-wider"
+                            >
+                              Open Map ↗
+                            </a>
+                          )}
                         </div>
                         <div className="mt-0.5 text-xs sm:text-sm text-foreground font-semibold whitespace-pre-line leading-relaxed">
                           {item.value}
@@ -97,13 +110,23 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-[18px] overflow-hidden border border-border/80 aspect-[16/9] bg-[#f8f8f6] relative shadow-inner">
+              {/* Interactive Google Map for Corporate Office */}
+              <div className="mt-8 rounded-[18px] overflow-hidden border border-border/80 aspect-[16/9] bg-[#f8f8f6] relative shadow-inner group">
                 <iframe
-                  title="Artisan Ventures location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=72.45%2C23.00%2C72.65%2C23.18&layer=mapnik&marker=23.10%2C72.51"
+                  title="Artisan Ventures Corporate Office Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4939762744883!2d72.5644361!3d23.0490954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84888c032fc7%3A0xcb3e074aa52f1280!2s44%2C%20Somnath%20Rd%2C%20Shanti%20Nagar%2C%20Usmanpura%2C%20Ahmedabad%2C%20Gujarat%20380013!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   className="w-full h-full border-0"
                   loading="lazy"
+                  allowFullScreen
                 />
+                <a
+                  href="https://maps.app.goo.gl/orDcQ8RjCBukQ4gX8?g_st=aw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-white/95 text-[#1c1c1e] text-[11px] font-bold uppercase tracking-wider border border-border/80 shadow-md hover:bg-magenta hover:text-white transition-all duration-300"
+                >
+                  View on Google Maps ↗
+                </a>
               </div>
             </div>
           </FadeIn>

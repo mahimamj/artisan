@@ -7,9 +7,9 @@ import {
   StaggerItem,
   FadeIn,
 } from "@/components/motion/fade-in";
-import { Search, Palette, Printer, Sparkles, Scissors, ShieldCheck, Truck } from "lucide-react";
+import { Palette, Layers, Printer, SearchCheck, Scissors, ShieldCheck, Truck, Sparkles } from "lucide-react";
 
-const STEP_ICONS = [Search, Palette, Printer, Sparkles, Scissors, ShieldCheck, Truck];
+const STEP_ICONS = [Palette, Layers, Printer, SearchCheck, Scissors, ShieldCheck, Truck];
 
 export function ManufacturingProcess() {
   return (
@@ -41,7 +41,7 @@ export function ManufacturingProcess() {
                         <IconComponent size={24} className="text-magenta group-hover:text-white transition-colors duration-400" />
                       </div>
                       <span className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[10px] font-black bg-magenta text-white shadow-sm">
-                        0{index + 1}
+                        {step.stage}
                       </span>
                     </div>
 

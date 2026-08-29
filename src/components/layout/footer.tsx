@@ -21,13 +21,26 @@ export function Footer() {
             </p>
             <div className="text-xs text-[#5f6368] space-y-2 mb-8 border-l-2 border-[#a20160]/40 pl-3">
               <div>
-                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Group Company (Digital Printing):</strong>
-                <span className="font-semibold text-[#a20160]">Kalpa Digi World</span>
+                <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px] mb-1">Group Company (Digital Printing):</strong>
+                <a
+                  href="https://kalpadigiworld.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#f8f8f6] hover:bg-white border border-[#e6e6e6] hover:border-[#a20160]/40 transition-all duration-300 shadow-2xs"
+                  title="Visit Kalpa Digi World Website"
+                >
+                  <img
+                    src="/kalpa-digi-world-logo.png"
+                    alt="Kalpa Digi World Logo"
+                    className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="text-[11px] font-bold text-[#a20160] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                </a>
               </div>
               <div>
                 <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Email & Contact:</strong>
-                <span>Kunal@artisanven.com (Mo: +91 98257 44787)</span><br />
-                <span>Sales@artisanven.com (Mo: +91 93771 44222)</span>
+                <span>Kunal@artisanven.com (Kunal Patel: +91 98257 44787)</span><br />
+                <span>Sales@artisanven.com (Dhruv Patel: +91 93771 44222)</span>
               </div>
               <div>
                 <strong className="text-[#1c1c1e] block uppercase tracking-wider text-[10px]">Factory Address:</strong>

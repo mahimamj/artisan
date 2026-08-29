@@ -13,14 +13,12 @@ import {
 
 const CATEGORY_TAGS: Record<string, string[]> = {
   "Pharma Labels": ["Tamper-Evident", "FDA Compliant"],
-  "Perfume Labels": ["Tactile Emboss", "Luxury Foil"],
   "FMCG Packaging Labels": ["High-Speed Run", "Vibrant CMYK"],
-  "Cosmetic Labels": ["Waterproof PP", "Oil-Resistant"],
-  "Pharmaceutical Compliance": ["Security Track", "Zero Defect"],
+  "Cosmetics & Personal Care Labels": ["Waterproof PP", "Oil-Resistant"],
+  "Nutraceutical Labels": ["Dietary Supplements", "Foil & Metallic"],
   "Sachet Printing": ["High Barrier Foil", "Sample Pouches"],
   "Food & Beverage Labels": ["Food-Safe Inks", "Moisture Proof"],
   "Liquor and Beverages": ["Metallic Foil", "Wash-Off Adhesive"],
-  "Industrial Barcode & Logistics": ["Thermal Transfer", "High Adhesive"],
 };
 
 import { useQuoteModal } from "@/context/quote-modal-context";

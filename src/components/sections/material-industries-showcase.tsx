@@ -40,7 +40,7 @@ const SQUARE_MATERIALS = [
   {
     name: "Clear-on-Clear",
     sub: "Zero-Haze Glass Finish",
-    image: "/categories/perfume/Gemini_Generated_Image_wsoo7ywsoo7ywsoo.png",
+    image: "/categories/perfume/clear-on-clear-label.png",
     tag: "HIGH-END PERFUME",
   },
 ];

@@ -25,24 +25,9 @@ const CLIENTS = [
     category: "Pharma & Biotech",
   },
   {
-    name: "Jain Dairy",
-    logo: "/clients/jain-dairy.png",
-    category: "FMCG & Dairy",
-  },
-  {
     name: "Larsen & Toubro",
     logo: "/clients/lt.png",
     category: "Engineering",
-  },
-  {
-    name: "Swiss Pharma",
-    logo: "/clients/swiss-pharma.png",
-    category: "Pharmaceuticals",
-  },
-  {
-    name: "Yanfeng Automotive",
-    logo: "/clients/yanfeng.png",
-    category: "Automotive",
   },
   {
     name: "Zydus Hospitals",

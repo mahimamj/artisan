@@ -67,7 +67,7 @@ const MATERIAL_RANGE = [
   {
     name: "Clear-on-Clear Labels",
     tag: "Ultra-Premium Glass Finish",
-    image: "/categories/perfume/Gemini_Generated_Image_wsoo7ywsoo7ywsoo.png",
+    image: "/categories/perfume/clear-on-clear-label.png",
     description: "Highest clarity liner and facestock for invisible label edge illusion.",
     bestFor: "High-end skincare, perfumes, luxury glass bottle packaging.",
     properties: ["Zero Haze Clarity", "Luxury Packaging Standard", "Precision Die-Cutting"],

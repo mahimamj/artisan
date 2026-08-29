@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, Zap, CheckCircle, ArrowRight, ShieldAlert } from "lucide-react";
+import { Layers, Zap, CheckCircle, ArrowRight, ExternalLink } from "lucide-react";
 import { FadeIn, SectionHeader, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { useQuoteModal } from "@/context/quote-modal-context";
 
@@ -86,7 +86,7 @@ export function FlexoDigitalIntro() {
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#026aa0] to-[#81014d]" />
                 
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center justify-between mb-6 gap-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#026aa0]/10 text-[#026aa0]">
                       <Zap size={24} />
                     </div>
@@ -95,11 +95,29 @@ export function FlexoDigitalIntro() {
                     </span>
                   </div>
 
-                  <h3 className="font-serif-heading text-2xl sm:text-3xl font-bold text-[#1c1c1e] tracking-tight">
-                    Digital Printing (Kalpa Digi World)
-                  </h3>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
+                    <h3 className="font-serif-heading text-2xl sm:text-3xl font-bold text-[#1c1c1e] tracking-tight">
+                      Digital Printing
+                    </h3>
+                    {/* Kalpa Digi World Logo Link */}
+                    <a
+                      href="https://kalpadigiworld.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 p-1.5 px-3 rounded-xl bg-[#026aa0]/5 hover:bg-[#026aa0]/10 border border-[#026aa0]/20 transition-all group/logo"
+                      title="Visit Kalpa Digi World Website"
+                    >
+                      <img
+                        src="/kalpa-digi-world-logo.png"
+                        alt="Kalpa Digi World"
+                        className="h-5 w-auto object-contain"
+                      />
+                      <ExternalLink size={13} className="text-[#026aa0] transition-transform group-hover/logo:translate-x-0.5 group-hover/logo:-translate-y-0.5" />
+                    </a>
+                  </div>
+
                   <p className="mt-2.5 text-sm sm:text-base text-[#4a4d52] leading-relaxed">
-                    High-definition digital printing tailored for short-runs, multi-SKU launches, and custom quick-turnaround orders.
+                    Powered by group company <strong>Kalpa Digi World</strong> — High-definition digital printing tailored for short-runs, multi-SKU launches, and custom quick-turnaround orders.
                   </p>
 
                   <div className="mt-8 space-y-3.5 border-t border-border/60 pt-6">
@@ -124,7 +142,7 @@ export function FlexoDigitalIntro() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-border/60">
+                <div className="mt-8 pt-6 border-t border-border/60 space-y-2.5">
                   <button
                     onClick={() => openQuoteModal("Digital Short-Run Quote")}
                     className="w-full py-3.5 px-6 rounded-xl bg-[#026aa0] hover:bg-[#025682] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
@@ -132,6 +150,16 @@ export function FlexoDigitalIntro() {
                     <span>Request Digital Short-Run Quote</span>
                     <ArrowRight size={16} />
                   </button>
+
+                  <a
+                    href="https://kalpadigiworld.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl border border-[#026aa0]/30 hover:border-[#026aa0] bg-[#026aa0]/5 hover:bg-[#026aa0]/10 text-[#026aa0] text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                  >
+                    <span>Visit kalpadigiworld.com Website</span>
+                    <ExternalLink size={14} className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  </a>
                 </div>
               </div>
             </StaggerItem>
