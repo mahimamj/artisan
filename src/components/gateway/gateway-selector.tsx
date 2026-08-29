@@ -132,22 +132,22 @@ export function GatewaySelector() {
 
       {/* OVERLAPPING SECTION CONTAINER (Cards float ON TOP of the Banner bottom) */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 -mt-20 sm:-mt-28 lg:-mt-32 relative z-20 space-y-10 sm:space-y-14 pb-16 lg:pb-24">
-        {/* 2. SPLIT CARDS (EXACT RATIO: 70% LABEL MANUFACTURING / 30% PRINTER RENTAL) */}
+        {/* 2. SPLIT CARDS (EXACT RATIO: 70% LABEL MANUFACTURING / 30% PRINTER RENTAL SIDE-BY-SIDE ON MOBILE & DESKTOP) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-full flex flex-col md:flex-row gap-6 items-stretch"
+          className="w-full flex flex-row gap-2.5 sm:gap-6 items-stretch"
         >
           {/* CARD 01 — LABEL MANUFACTURING (70% WIDTH RATIO) */}
           <Link
             href="/labels"
-            className="w-full md:w-[68%] md:flex-[7] transition-all duration-500 ease-out focus:outline-none group"
+            className="w-[68%] flex-[7] transition-all duration-500 ease-out focus:outline-none group"
             onMouseEnter={() => setHoveredCard("labels")}
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div
-              className={`h-full min-h-[340px] sm:min-h-[380px] lg:min-h-[400px] p-8 sm:p-10 rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${
+              className={`h-full min-h-[260px] sm:min-h-[380px] lg:min-h-[400px] p-4 sm:p-10 rounded-[18px] sm:rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${
                 hoveredCard === "labels"
                   ? "border-[#81014d]/60 bg-gradient-to-br from-[#81014d]/[0.08] via-white to-[#f8f8f6] shadow-2xl shadow-[#81014d]/25"
                   : "border-[#d8d8d5] bg-gradient-to-br from-[#fcfcfb] via-white to-[#f4f4f1] shadow-xl hover:shadow-2xl"
@@ -164,34 +164,35 @@ export function GatewaySelector() {
 
               {/* Top Bar Header (01 Number Accent) */}
               <div className="flex items-center justify-between relative z-10">
-                <div className="flex items-center gap-3">
-                  <span className="font-serif-heading text-4xl sm:text-5xl font-light text-[#ae5f05]">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="font-serif-heading text-2xl sm:text-5xl font-light text-[#ae5f05]">
                     01
                   </span>
-                  <span className="w-10 h-[1.5px] bg-[#ae5f05]/40" />
+                  <span className="w-6 sm:w-10 h-[1.5px] bg-[#ae5f05]/40" />
                 </div>
               </div>
 
               {/* Content Body */}
-              <div className="my-6 sm:my-8 relative z-10 space-y-4">
+              <div className="my-2 sm:my-8 relative z-10 space-y-2 sm:space-y-4">
                 {/* Round Amber Circle Badge Icon */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#ae5f05] text-white flex items-center justify-center shadow-lg shadow-[#ae5f05]/30 group-hover:scale-110 transition-transform duration-300">
-                  <Scroll size={28} strokeWidth={1.75} />
+                <div className="w-9 h-9 sm:w-16 sm:h-16 rounded-full bg-[#ae5f05] text-white flex items-center justify-center shadow-lg shadow-[#ae5f05]/30 group-hover:scale-110 transition-transform duration-300">
+                  <Scroll className="w-4 h-4 sm:w-7 sm:h-7" strokeWidth={1.75} />
                 </div>
 
-                <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#81014d] transition-colors duration-300">
+                <h2 className="font-serif-heading text-base sm:text-4xl lg:text-5xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#81014d] transition-colors duration-300">
                   Label Manufacturing
                 </h2>
-                <p className="text-xs sm:text-base text-[#4a4d52] font-medium leading-relaxed max-w-xl">
+                <p className="text-[10px] sm:text-base text-[#4a4d52] font-medium leading-tight sm:leading-relaxed max-w-xl">
                   High-precision flexographic and digital rotary die-cut self-adhesive labels engineered for FMCG, luxury perfume, pharmaceuticals, cosmetics, and enterprise packaging.
                 </p>
               </div>
 
               {/* Bottom CTA Link */}
-              <div className="relative z-10 flex items-center gap-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#81014d] transition-colors duration-300">
-                <span>EXPLORE LABEL DIVISION</span>
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#81014d] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
-                  <ArrowRight size={16} />
+              <div className="relative z-10 flex items-center gap-1.5 sm:gap-3 text-[10px] sm:text-sm font-bold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#81014d] transition-colors duration-300 pt-1 sm:pt-0">
+                <span className="truncate">EXPLORE LABELS</span>
+                <div className="flex h-6 w-6 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#81014d] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowRight size={13} className="sm:hidden" />
+                  <ArrowRight size={16} className="hidden sm:block" />
                 </div>
               </div>
             </div>
@@ -200,12 +201,12 @@ export function GatewaySelector() {
           {/* CARD 02 — PRINTER RENTAL (30% WIDTH RATIO) */}
           <Link
             href="/printer-rental"
-            className="w-full md:w-[32%] md:flex-[3] transition-all duration-500 ease-out focus:outline-none group"
+            className="w-[32%] flex-[3] transition-all duration-500 ease-out focus:outline-none group"
             onMouseEnter={() => setHoveredCard("printers")}
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div
-              className={`h-full min-h-[340px] sm:min-h-[380px] lg:min-h-[400px] p-8 sm:p-10 rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${
+              className={`h-full min-h-[260px] sm:min-h-[380px] lg:min-h-[400px] p-3.5 sm:p-10 rounded-[18px] sm:rounded-[28px] transition-all duration-500 flex flex-col justify-between relative overflow-hidden border ${
                 hoveredCard === "printers"
                   ? "border-[#81014d]/60 bg-gradient-to-br from-[#81014d]/[0.08] via-white to-[#f8f8f6] shadow-2xl shadow-[#81014d]/25"
                   : "border-[#d8d8d5] bg-gradient-to-br from-[#fdfbfd] via-white to-[#f7f4f7] shadow-xl hover:shadow-2xl"
@@ -222,34 +223,35 @@ export function GatewaySelector() {
 
               {/* Top Bar Header (02 Number Accent) */}
               <div className="flex items-center justify-between relative z-10">
-                <div className="flex items-center gap-3">
-                  <span className="font-serif-heading text-4xl sm:text-5xl font-light text-[#81014d]">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="font-serif-heading text-2xl sm:text-5xl font-light text-[#81014d]">
                     02
                   </span>
-                  <span className="w-10 h-[1.5px] bg-[#81014d]/40" />
+                  <span className="w-5 sm:w-10 h-[1.5px] bg-[#81014d]/40" />
                 </div>
               </div>
 
               {/* Content Body */}
-              <div className="my-6 sm:my-8 relative z-10 space-y-4">
+              <div className="my-2 sm:my-8 relative z-10 space-y-2 sm:space-y-4">
                 {/* Round Magenta Circle Badge Icon */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#81014d] text-white flex items-center justify-center shadow-lg shadow-[#81014d]/30 group-hover:scale-110 transition-transform duration-300">
-                  <Printer size={28} strokeWidth={1.75} />
+                <div className="w-9 h-9 sm:w-16 sm:h-16 rounded-full bg-[#81014d] text-white flex items-center justify-center shadow-lg shadow-[#81014d]/30 group-hover:scale-110 transition-transform duration-300">
+                  <Printer className="w-4 h-4 sm:w-7 sm:h-7" strokeWidth={1.75} />
                 </div>
 
-                <h2 className="font-serif-heading text-3xl sm:text-4xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#81014d] transition-colors duration-300">
+                <h2 className="font-serif-heading text-xs sm:text-4xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#81014d] transition-colors duration-300 leading-tight">
                   Printer Rental
                 </h2>
-                <p className="text-xs sm:text-sm text-[#4a4d52] font-medium leading-relaxed">
-                  Enterprise A4/A3 MFP color and monochrome printer rental fleets with free service & maintenance to keep your business running seamlessly.
+                <p className="text-[10px] sm:text-sm text-[#4a4d52] font-medium leading-tight">
+                  Enterprise MFP printer rental fleets with free service.
                 </p>
               </div>
 
               {/* Bottom CTA Link */}
-              <div className="relative z-10 flex items-center gap-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#81014d] transition-colors duration-300">
-                <span>PRINTER RENTAL</span>
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#81014d] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
-                  <ArrowRight size={16} />
+              <div className="relative z-10 flex items-center gap-1 sm:gap-3 text-[9px] sm:text-sm font-bold uppercase tracking-wider text-[#1c1c1e] group-hover:text-[#81014d] transition-colors duration-300 pt-1 sm:pt-0">
+                <span className="truncate">PRINTERS</span>
+                <div className="flex h-6 w-6 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-black/5 text-[#1c1c1e] group-hover:bg-[#81014d] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowRight size={13} className="sm:hidden" />
+                  <ArrowRight size={16} className="hidden sm:block" />
                 </div>
               </div>
             </div>
