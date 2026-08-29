@@ -41,21 +41,21 @@ export function GatewaySelector() {
     <div className="relative z-10 w-full">
       {/* 1. FULL-WIDTH HERO BANNER SECTION (Fixed Text, Auto-Rotating Background Images every 3s) */}
       <section className="relative w-full bg-[#0b0812] text-white pt-28 pb-36 sm:pt-32 sm:pb-44 lg:pt-36 lg:pb-52 overflow-hidden">
-        {/* Background Image Carousel with Ultra-Smooth 1.2s Crossfade */}
+        {/* Background Image Carousel with Ultra-Smooth 1.0s Crossfade */}
         <AnimatePresence mode="popLayout">
           <motion.div
             key={HERO_IMAGES[currentBgIndex]}
             initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.8, scale: 1 }}
+            animate={{ opacity: 0.85, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
             transition={{ duration: 1.0, ease: [0.25, 0.1, 0.25, 1.0] }}
-            className="absolute inset-0 bg-cover bg-right-center sm:bg-right filter brightness-90 contrast-110 pointer-events-none"
+            className="absolute inset-0 bg-cover bg-[95%_center] sm:bg-right filter brightness-95 contrast-105 pointer-events-none"
             style={{ backgroundImage: `url('${HERO_IMAGES[currentBgIndex]}')` }}
           />
         </AnimatePresence>
 
         {/* Dark Scrim Overlays for High Contrast Left-Aligned Text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0812] via-[#0b0812]/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0812] via-[#0b0812]/85 sm:via-[#0b0812]/90 to-transparent/15 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b0812] via-transparent to-black/40 pointer-events-none" />
 
         {/* Content Container (FIXED TEXT CONTENT) */}
