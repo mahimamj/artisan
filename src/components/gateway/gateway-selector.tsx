@@ -209,10 +209,10 @@ export function GatewaySelector() {
                   : "border-[#d8d8d5] bg-gradient-to-br from-[#fdfbfd] via-white to-[#f7f4f7] shadow-xl hover:shadow-2xl"
                 }`}
             >
-              {/* Background MFP Printer Picture Overlay */}
+              {/* Background Artisan Rentals MFP Printer Overlay */}
               <div
-                className="absolute inset-0 bg-contain bg-right-bottom bg-no-repeat opacity-[0.35] group-hover:opacity-[0.55] transition-opacity duration-700 pointer-events-none mix-blend-multiply filter contrast-110 brightness-95"
-                style={{ backgroundImage: "url('/printers/canon-ir-c3326.png')" }}
+                className="absolute inset-0 bg-cover bg-right-center sm:bg-right-bottom bg-no-repeat opacity-[0.45] group-hover:opacity-[0.65] transition-opacity duration-700 pointer-events-none mix-blend-multiply filter contrast-110 brightness-95"
+                style={{ backgroundImage: "url('/printer-card-bg.jpg')" }}
               />
 
               {/* Subtle Gradient Fade Overlay */}
