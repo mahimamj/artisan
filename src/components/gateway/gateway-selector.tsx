@@ -152,10 +152,10 @@ export function GatewaySelector() {
                   : "border-[#d8d8d5] bg-gradient-to-br from-[#fcfcfb] via-white to-[#f4f4f1] shadow-xl hover:shadow-2xl"
                 }`}
             >
-              {/* Background Machine Picture Overlay */}
+              {/* Background Machine & Label Roll Picture Overlay */}
               <div
-                className="absolute inset-0 bg-cover bg-right-center opacity-[0.25] group-hover:opacity-[0.40] transition-opacity duration-700 pointer-events-none mix-blend-multiply filter contrast-110 brightness-95"
-                style={{ backgroundImage: "url('/categories/perfume/ChatGPT_Image_Aug_7__2026__04_34_16_PM.png')" }}
+                className="absolute inset-0 bg-cover bg-right-center opacity-[0.40] group-hover:opacity-[0.60] transition-opacity duration-700 pointer-events-none mix-blend-multiply filter contrast-110 brightness-95"
+                style={{ backgroundImage: "url('/label-card-bg.jpg')" }}
               />
 
               {/* Subtle Gradient Fade Overlay */}
