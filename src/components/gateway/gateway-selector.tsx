@@ -154,12 +154,12 @@ export function GatewaySelector() {
             >
               {/* Background Machine & Label Roll Picture Overlay */}
               <div
-                className="absolute inset-0 bg-cover bg-right-center opacity-[0.40] group-hover:opacity-[0.60] transition-opacity duration-700 pointer-events-none mix-blend-multiply filter contrast-110 brightness-95"
+                className="absolute inset-0 bg-cover bg-right-center opacity-[0.75] group-hover:opacity-[0.90] transition-opacity duration-700 pointer-events-none filter contrast-105 brightness-95"
                 style={{ backgroundImage: "url('/label-card-bg.jpg')" }}
               />
 
-              {/* Subtle Gradient Fade Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent pointer-events-none" />
+              {/* Reduced White Gradient Fade Overlay (40%+ reduction for rich image visibility) */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/55 to-transparent/10 pointer-events-none" />
 
               {/* Top Bar Header (01 Number Accent) */}
               <div className="flex items-center justify-between relative z-10">
@@ -181,7 +181,7 @@ export function GatewaySelector() {
                 <h2 className="font-serif-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1c1c1e] tracking-tight group-hover:text-[#81014d] transition-colors duration-300">
                   Label Manufacturing
                 </h2>
-                <p className="text-xs sm:text-base text-[#4a4d52] font-medium leading-relaxed max-w-xl">
+                <p className="text-xs sm:text-base text-[#2c2d30] font-medium leading-relaxed max-w-xl">
                   High-precision flexographic and digital rotary die-cut self-adhesive labels engineered for FMCG, luxury perfume, pharmaceuticals, cosmetics, and enterprise packaging.
                 </p>
               </div>
@@ -211,12 +211,12 @@ export function GatewaySelector() {
             >
               {/* Background Artisan Rentals MFP Printer Overlay */}
               <div
-                className="absolute inset-0 bg-cover bg-right-center sm:bg-right-bottom bg-no-repeat opacity-[0.45] group-hover:opacity-[0.65] transition-opacity duration-700 pointer-events-none mix-blend-multiply filter contrast-110 brightness-95"
+                className="absolute inset-0 bg-cover bg-right-center sm:bg-right-bottom bg-no-repeat opacity-[0.80] group-hover:opacity-[0.95] transition-opacity duration-700 pointer-events-none filter contrast-105 brightness-95"
                 style={{ backgroundImage: "url('/printer-card-bg.jpg')" }}
               />
 
-              {/* Subtle Gradient Fade Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-transparent pointer-events-none" />
+              {/* Reduced White Gradient Fade Overlay (40%+ reduction for rich image visibility) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/55 to-transparent/10 pointer-events-none" />
 
               {/* Top Bar Header (02 Number Accent) */}
               <div className="flex items-center justify-between relative z-10">
