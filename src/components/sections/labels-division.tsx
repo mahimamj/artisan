@@ -27,7 +27,8 @@ export function LabelsDivision() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <section id="catalog" className="section-padding bg-background border-t border-border/80 relative overflow-hidden">
+    <section id="catalog" className="section-padding scroll-mt-20 bg-background border-t border-border/80 relative overflow-hidden">
+      <span id="labels" className="absolute -top-24 pointer-events-none" />
       {/* Background Visual Accent Glow */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-magenta/5 blur-[140px] rounded-full pointer-events-none" />
 

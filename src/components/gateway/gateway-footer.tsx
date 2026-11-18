@@ -39,7 +39,7 @@ export function GatewayFooter() {
             <ExternalLink size={12} className="text-magenta opacity-80 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
 
-          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited | Kunal@artisanven.com (+91 98257 44787) | Sales@artisanven.com (+91 93771 44222)</p>
+          <p>© {new Date().getFullYear()} Artisan Ventures Private Limited | Kunal@artisanven.com (+91 98257 44787) | Sales@artisanven.com (+91 93771 44222) | Created by Mahima Joshi - Team Social Tusk. All rights reserved.</p>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs uppercase tracking-wider font-bold text-foreground-secondary">

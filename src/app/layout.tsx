@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     "Barcode printers",
     "A3 A4 printer rental",
   ],
+  icons: {
+    icon: [
+      { url: "/artisan-logo.png", type: "image/png" },
+      { url: "/artisan-logo.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/artisan-logo.png",
+    apple: "/artisan-logo.png",
+  },
   openGraph: {
     title: "Artisan Ventures Private Limited | Two Businesses. One Trusted Partner.",
     description:
@@ -46,6 +54,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "Fvi6FcOHYUiAytxj874XNuoitK-mhTqq-NyHdsWNNU8",
   },
 };
 

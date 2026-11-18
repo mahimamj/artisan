@@ -290,7 +290,7 @@ Please share the available options and quotation.`;
                       type="button"
                       variant="outline"
                       onClick={() => setIsSubmitted(false)}
-                      className="w-full h-11 text-xs font-bold uppercase tracking-wider rounded-xl border-[#e6e6e6]"
+                      className="w-full h-11 text-xs font-bold uppercase tracking-wider rounded-xl border-[#cccccc] text-[#1c1c1e] hover:bg-black/5"
                     >
                       Edit Requirements
                     </Button>

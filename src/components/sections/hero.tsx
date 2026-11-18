@@ -44,7 +44,7 @@ export function Hero() {
             <FadeIn delay={0.45}>
               <div className="mt-10 flex flex-wrap gap-4 items-center">
                 <Button asChild size="lg" className="bg-[#a20160] text-white hover:bg-[#a20160]/90 h-13 px-7 rounded-[14px] text-sm font-semibold tracking-wide uppercase">
-                  <Link href="#labels">
+                  <Link href="#catalog">
                     Explore Label Catalog
                     <ArrowRight size={18} />
                   </Link>

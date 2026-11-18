@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useQuoteModal } from "@/context/quote-modal-context";
 
 export function GatewayNavbar() {
-  const { openQuoteModal } = useQuoteModal();
+  const { openQuoteModal, openEnquireModal } = useQuoteModal();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -50,6 +50,14 @@ export function GatewayNavbar() {
         {/* Right Action & Mobile Toggle */}
         <div className="flex items-center gap-2 sm:gap-2.5">
           <Button
+            size="sm"
+            onClick={openEnquireModal}
+            className="bg-[#81014d] hover:bg-[#6b0140] text-white text-[11px] sm:text-xs font-bold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm flex items-center gap-1.5"
+          >
+            <span>Enquire Now</span>
+          </Button>
+
+          <Button
             variant="outline"
             size="sm"
             onClick={() => openQuoteModal("Order Request")}
@@ -59,11 +67,12 @@ export function GatewayNavbar() {
           </Button>
 
           <Button
+            variant="outline"
             size="sm"
             onClick={() => openQuoteModal("Free Sample Pack")}
-            className="hidden sm:inline-flex bg-[#81014d] hover:bg-[#6b0140] text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm"
+            className="hidden md:inline-flex border-[#81014d]/30 text-[#81014d] bg-[#81014d]/5 hover:bg-[#81014d]/10 text-[11px] sm:text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm"
           >
-            Request Free Sample
+            Sample Pack
           </Button>
 
           {/* Mobile Hamburger Toggle Button */}
@@ -100,6 +109,15 @@ export function GatewayNavbar() {
               ))}
               <div className="pt-2 flex flex-col gap-2.5">
                 <Button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openEnquireModal();
+                  }}
+                  className="w-full bg-[#81014d] text-white hover:bg-[#6b0140] text-xs font-bold uppercase tracking-wider h-10 rounded-xl shadow-sm"
+                >
+                  Enquire Now (Instant Quote)
+                </Button>
+                <Button
                   variant="outline"
                   onClick={() => {
                     setMobileMenuOpen(false);
@@ -110,11 +128,12 @@ export function GatewayNavbar() {
                   Request to Order
                 </Button>
                 <Button
+                  variant="outline"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     openQuoteModal("Free Sample Pack");
                   }}
-                  className="w-full bg-[#a20160] text-white hover:bg-[#a20160]/90 text-xs font-bold uppercase tracking-wider h-10 rounded-xl shadow-sm"
+                  className="w-full border-[#81014d]/30 text-[#81014d] bg-[#81014d]/5 hover:bg-[#81014d]/10 text-xs font-bold uppercase tracking-wider h-10 rounded-xl"
                 >
                   Request Free Sample
                 </Button>

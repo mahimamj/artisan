@@ -494,11 +494,16 @@ export const FOOTER_LINKS = {
 export const COMPANY_ADDRESSES = {
   factory: {
     title: "Factory Address",
-    address: "Plot no 828, Santej, Opposite Neelkanth Hotel, behind Bhavi Tubes, Rakanpur, Taluka Kalol, Gujarat - 382721"
+    name: "Artisan Ventures Private Limited",
+    address: "Plot no 828, Santej, Opposite Neelkanth Hotel, behind Bhavi Tubes, Rakanpur, Taluka Kalol, Gujarat - 382721",
+    plusCode: "3FXH+X3 Santej, Gujarat",
+    mapLink: "https://www.google.com/maps/search/?api=1&query=Artisan+Ventures+Private+Limited,+3FXH%2BX3+Santej,+Gujarat"
   },
   office: {
     title: "Registered / Office Address",
-    address: "44, Panchshil Bunglow, Opp Metro Pillar - 288, Near Naranpura Railway Crossing, Usmanpura, Ahmedabad, Gujarat - 380013"
+    name: "Artisan Ventures Private Limited",
+    address: "44, Panchshil Bunglow, Opp Metro Pillar - 288, Near Naranpura Railway Crossing, Usmanpura, Ahmedabad, Gujarat - 380013",
+    mapLink: "https://www.google.com/maps/search/?api=1&query=44,+Somnath+Rd,+Shanti+Nagar,+Usmanpura,+Ahmedabad,+Gujarat+380013"
   }
 } as const;
 
@@ -527,5 +532,7 @@ export const COMPANY_CONTACT = {
   email2: "Sales@artisanven.com",
 } as const;
 
-
-
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/in/kunal-patel-2896713bb/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2UcFeZlZRyiKq5lNR1%2FnXw%3D%3D",
+  instagram: "https://www.instagram.com/artisan_ventures?cplk=d2U5OTQ4YTAxc25w",
+} as const;

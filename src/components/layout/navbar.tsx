@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { useQuoteModal } from "@/context/quote-modal-context";
 
 export function Navbar() {
-  const { openQuoteModal } = useQuoteModal();
+  const { openQuoteModal, openEnquireModal } = useQuoteModal();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -55,21 +55,29 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-2.5">
+          <div className="hidden lg:flex items-center gap-2">
+            <Button
+              size="sm"
+              onClick={openEnquireModal}
+              className="bg-[#81014d] hover:bg-[#6b0140] text-white text-xs font-bold tracking-wider uppercase px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm flex items-center gap-1.5"
+            >
+              <span>Enquire Now</span>
+            </Button>
             <Button
               variant="outline"
               size="sm"
               onClick={() => openQuoteModal("Order Request")}
-              className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300"
+              className="border-[#1c1c1e]/20 text-[#1c1c1e] bg-transparent hover:bg-black/5 hover:border-[#1c1c1e]/40 text-xs font-semibold tracking-wider uppercase px-3.5 h-9 rounded-[10px] transition-all duration-300"
             >
               Request to Order
             </Button>
             <Button
+              variant="outline"
               size="sm"
               onClick={() => openQuoteModal("Free Sample Pack")}
-              className="bg-[#81014d] hover:bg-[#6b0140] text-white text-xs font-semibold tracking-wider uppercase px-3.5 sm:px-4 h-9 rounded-[10px] transition-all duration-300 shadow-sm"
+              className="border-[#81014d]/30 text-[#81014d] bg-[#81014d]/5 hover:bg-[#81014d]/10 text-xs font-semibold tracking-wider uppercase px-3.5 h-9 rounded-[10px] transition-all duration-300"
             >
-              Request Free Sample
+              Sample Pack
             </Button>
           </div>
 
@@ -125,6 +133,16 @@ export function Navbar() {
                 className="flex flex-col gap-3 w-full max-w-xs mt-2"
               >
                 <Button
+                  size="lg"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    openEnquireModal();
+                  }}
+                  className="w-full bg-[#81014d] hover:bg-[#6b0140] text-white text-xs font-bold uppercase tracking-wider h-11 rounded-xl shadow-lg shadow-[#81014d]/30"
+                >
+                  Enquire Now (Instant Quote)
+                </Button>
+                <Button
                   variant="outline"
                   size="lg"
                   onClick={() => {
@@ -136,12 +154,13 @@ export function Navbar() {
                   Request to Order
                 </Button>
                 <Button
+                  variant="outline"
                   size="lg"
                   onClick={() => {
                     setMobileOpen(false);
                     openQuoteModal("Free Sample Pack");
                   }}
-                  className="w-full bg-[#a20160] hover:bg-[#880150] text-white text-xs font-bold uppercase tracking-wider h-11 rounded-xl shadow-lg shadow-[#a20160]/30"
+                  className="w-full text-white border-white/20 bg-white/5 hover:bg-white/20 text-xs font-bold uppercase tracking-wider h-11 rounded-xl"
                 >
                   Request Free Sample
                 </Button>

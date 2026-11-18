@@ -16,7 +16,7 @@ const SQUARE_MATERIALS = [
   {
     name: "White PP",
     sub: "100% Waterproof Film",
-    image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
+    image: "/categories/cosmetic/white-pp-shampoo-bottles.png",
     tag: "COSMETICS & PHARMA",
   },
   {
@@ -34,7 +34,7 @@ const SQUARE_MATERIALS = [
   {
     name: "Transparent PP",
     sub: "No-Label Look Film",
-    image: "/categories/pharma/Gemini_Generated_Image_9owg3w9owg3w9owg.png",
+    image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
     tag: "CLEAR CONTAINERS",
   },
   {

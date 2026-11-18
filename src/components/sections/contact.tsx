@@ -9,6 +9,7 @@ import { FadeIn, SectionHeader } from "@/components/motion/fade-in";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [activeMap, setActiveMap] = useState<"factory" | "office">("factory");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,14 +57,15 @@ export function Contact() {
                   {[
                     {
                       icon: MapPin,
-                      label: "Factory & Manufacturing Plant",
-                      value: "Plot no 828, Santej, Opposite Neelkanth Hotel,\nbehind Bhavi Tubes, Rakanpur, Taluka Kalol,\nGujarat - 382721",
+                      label: "Factory & Manufacturing Plant (Google Maps)",
+                      value: "Artisan Ventures Private Limited\nPlot no 828, Santej, Opposite Neelkanth Hotel,\nbehind Bhavi Tubes, Rakanpur, Taluka Kalol,\nGujarat - 382721\nLocation: 3FXH+X3 Santej, Gujarat",
+                      link: "https://www.google.com/maps/search/?api=1&query=Artisan+Ventures+Private+Limited,+3FXH%2BX3+Santej,+Gujarat",
                     },
                     {
                       icon: MapPin,
                       label: "Registered Corporate Office (Google Maps)",
                       value: "44, Somnath Rd, Shanti Nagar, Usmanpura,\nAhmedabad, Gujarat - 380013",
-                      link: "https://maps.app.goo.gl/orDcQ8RjCBukQ4gX8?g_st=aw",
+                      link: "https://www.google.com/maps/search/?api=1&query=44,+Somnath+Rd,+Shanti+Nagar,+Usmanpura,+Ahmedabad,+Gujarat+380013",
                     },
                     {
                       icon: Mail,
@@ -110,23 +112,64 @@ export function Contact() {
                 </div>
               </div>
 
-              {/* Interactive Google Map for Corporate Office */}
-              <div className="mt-8 rounded-[18px] overflow-hidden border border-border/80 aspect-[16/9] bg-[#f8f8f6] relative shadow-inner group">
-                <iframe
-                  title="Artisan Ventures Corporate Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4939762744883!2d72.5644361!3d23.0490954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84888c032fc7%3A0xcb3e074aa52f1280!2s44%2C%20Somnath%20Rd%2C%20Shanti%20Nagar%2C%20Usmanpura%2C%20Ahmedabad%2C%20Gujarat%20380013!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                  allowFullScreen
-                />
-                <a
-                  href="https://maps.app.goo.gl/orDcQ8RjCBukQ4gX8?g_st=aw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-white/95 text-[#1c1c1e] text-[11px] font-bold uppercase tracking-wider border border-border/80 shadow-md hover:bg-magenta hover:text-white transition-all duration-300"
-                >
-                  View on Google Maps ↗
-                </a>
+              {/* Interactive Google Map with Factory & Office Switcher */}
+              <div className="mt-8">
+                <div className="flex items-center gap-2 mb-3">
+                  <button
+                    type="button"
+                    onClick={() => setActiveMap("factory")}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold tracking-wide transition-all duration-200 cursor-pointer ${
+                      activeMap === "factory"
+                        ? "bg-magenta text-white shadow-sm"
+                        : "bg-white text-[#5f6368] border border-border/80 hover:text-[#1c1c1e]"
+                    }`}
+                  >
+                    Factory Plant (Santej)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveMap("office")}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold tracking-wide transition-all duration-200 cursor-pointer ${
+                      activeMap === "office"
+                        ? "bg-magenta text-white shadow-sm"
+                        : "bg-white text-[#5f6368] border border-border/80 hover:text-[#1c1c1e]"
+                    }`}
+                  >
+                    Corporate Office (Ahmedabad)
+                  </button>
+                </div>
+
+                <div className="rounded-[18px] overflow-hidden border border-border/80 aspect-[16/9] bg-[#f8f8f6] relative shadow-inner group">
+                  {activeMap === "factory" ? (
+                    <iframe
+                      title="Artisan Ventures Factory Location"
+                      src="https://maps.google.com/maps?q=3FXH%2BX3+Santej,+Gujarat&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      className="w-full h-full border-0"
+                      loading="lazy"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <iframe
+                      title="Artisan Ventures Corporate Office Location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4939762744883!2d72.5644361!3d23.0490954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84888c032fc7%3A0xcb3e074aa52f1280!2s44%2C%20Somnath%20Rd%2C%20Shanti%20Nagar%2C%20Usmanpura%2C%20Ahmedabad%2C%20Gujarat%20380013!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                      className="w-full h-full border-0"
+                      loading="lazy"
+                      allowFullScreen
+                    />
+                  )}
+                  <a
+                    href={
+                      activeMap === "factory"
+                        ? "https://www.google.com/maps/search/?api=1&query=Artisan+Ventures+Private+Limited,+3FXH%2BX3+Santej,+Gujarat"
+                        : "https://www.google.com/maps/search/?api=1&query=44,+Somnath+Rd,+Shanti+Nagar,+Usmanpura,+Ahmedabad,+Gujarat+380013"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-white/95 text-[#1c1c1e] text-[11px] font-bold uppercase tracking-wider border border-border/80 shadow-md hover:bg-magenta hover:text-white transition-all duration-300"
+                  >
+                    {activeMap === "factory" ? "View Factory on Google Maps ↗" : "View Office on Google Maps ↗"}
+                  </a>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -152,7 +195,7 @@ export function Contact() {
                     type="button"
                     onClick={() => setSubmitted(false)}
                     variant="outline"
-                    className="mt-6 text-xs font-bold uppercase tracking-wider rounded-full"
+                    className="mt-6 text-xs font-bold uppercase tracking-wider rounded-full border-[#cccccc] text-[#1c1c1e] hover:bg-black/5"
                   >
                     Submit Another Requirement
                   </Button>

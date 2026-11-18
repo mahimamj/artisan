@@ -19,7 +19,7 @@ const MATERIAL_RANGE = [
   {
     name: "White PP (Polypropylene)",
     tag: "Waterproof & Durable",
-    image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
+    image: "/categories/cosmetic/white-pp-shampoo-bottles.png",
     description: "Tear-resistant film built to withstand moisture, oils, and harsh handling.",
     bestFor: "Cosmetics, shampoos, pharmaceuticals, beverage bottles.",
     properties: ["Water & Oil Proof", "Squeezable & Flexible", "Gloss / Matte Lamination"],
@@ -55,7 +55,7 @@ const MATERIAL_RANGE = [
   {
     name: "Transparent PP / PE",
     tag: "No-Label Look",
-    image: "/categories/pharma/Gemini_Generated_Image_9owg3w9owg3w9owg.png",
+    image: "/categories/cosmetic/Gemini_Generated_Image_hghmnnhghmnnhghm.png",
     description: "Crystal-clear film that blends seamlessly into transparent containers.",
     bestFor: "Glass bottles, clear PET jars, cosmetic lotions, premium drinks.",
     properties: ["Seamless Transparency", "UV Resistant", "Waterproof Performance"],
